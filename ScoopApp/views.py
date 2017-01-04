@@ -19,6 +19,11 @@ from django.shortcuts import get_list_or_404, get_object_or_404
 def indexView(request):
     return render(request, 'ScoopApp/index.html', {})
 
+
+#INDEX VIEW
+def mapView(request):
+    return render(request, 'ScoopApp/map.html', {})
+
 class CraftBeerAPIViewSet(viewsets.ModelViewSet):
     queryset = CraftBeer.objects.all()
     serializer_class = CraftBeerSerializer

@@ -7,11 +7,13 @@
     <meta charset="UTF-8">
     <title>Scoop</title>
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% block extra_head %}{% endblock %}
 </head>
 <body>
     <header>
-        <a class="nav-link">What are People drinking?</a>
+        <a class="nav-link" href="/map">What are People drinking?</a>
         <a class="nav-link">About</a>
+        <a class="nav-link" href="/">Home</a>
     </header>
 
 

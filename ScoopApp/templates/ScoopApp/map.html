@@ -1,0 +1,47 @@
+{% extends 'ScoopApp/base.html' %}
+
+{% load staticfiles%}
+
+
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'css/map.css' %}">
+{% endblock %}
+
+{% block content %}
+
+
+
+    h1 id="province">Province</h1>
+<div id="rsr"></div>
+
+
+<script src="{% static 'libraries/raphael.min.js' %}"></script>
+<script src="{% static 'libraries/ireland.js' %}"></script>
+<script src="{% static 'libraries/jquery-2.1.3.min.js.js' %}"></script>
+
+<script>
+
+
+for (var i = 0; i < regions.length; i++){
+
+regions[i].mouseover(function(e){
+	this.node.setAttribute('fill', '#66ccff');
+	document.getElementById('province').innerHTML = this.data('id');
+	document.getElementById("divtoshow").style.opacity = '1';
+
+});
+
+regions[i].mouseout(function(e){
+
+	this.node.setAttribute('fill', '#b3ffb3');
+});
+
+}
+
+
+
+
+</script>
+
+
+{% endblock %}

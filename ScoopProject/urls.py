@@ -12,6 +12,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api/', include('ScoopApp.urls', namespace='ScoopApp')),
     url(r'', include('ScoopApp.urls')),
+    url(r'^map', include('ScoopApp.urls')),
 
 ]
 
