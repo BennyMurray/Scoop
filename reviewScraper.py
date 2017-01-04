@@ -19,7 +19,7 @@ br.set_handle_referer(False)
 br.set_handle_refresh(False)
 
 #Setting the user agent as firefox
-br.addheaders = [('User-agent', 'Firefox')]
+br.addheaders = [('User-agent', 'Firefox'), ('Accept', '*/*')]
 
 
 def scrapeReviews(beername, beerID):

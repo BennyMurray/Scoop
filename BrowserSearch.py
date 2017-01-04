@@ -7,7 +7,7 @@ def browsersearch(searchterm):
     br = mechanize.Browser()
     br.set_handle_robots(False)
     br.set_handle_equiv(False)
-    br.addheaders = [('User-agent', 'Mozilla/5.0')]
+    br.addheaders = [('User-agent', 'Mozilla/5.0'), ('Accept', '*/*')]
     br.open('http://www.google.com/')
 
     # do the query
