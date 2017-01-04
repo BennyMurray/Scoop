@@ -16,10 +16,11 @@ def populate():
     password = "password!!"
 
 
-
+    counter = 1
     for list in beerList:
-        add_Beer("5", list[0],list[2],list[3], list[4],list[5], list[6])
 
+        add_Beer("5", list[0],list[2],list[3], list[4],list[5], list[6], counter)
+        counter += 1
 
 
 
@@ -29,8 +30,8 @@ def populate():
 
 
 
-def add_Beer(beerID, beer_name, ABV, SRM, IBU, acidity, image_link):
-    b, created = CraftBeer.objects.get_or_create(beerID=beerID, beer_name=beer_name, ABV=ABV, SRM=SRM, IBU=IBU, acidity=acidity, image_link=image_link)
+def add_Beer(beerID, beer_name, ABV, SRM, IBU, acidity, image_link, sequence_added):
+    b, created = CraftBeer.objects.get_or_create(beerID=beerID, beer_name=beer_name, ABV=ABV, SRM=SRM, IBU=IBU, acidity=acidity, image_link=image_link, sequence_added=sequence_added)
     print ("- CraftBeer: {0}, Created: {1}".format(str(b), str(created)))
     return b
 

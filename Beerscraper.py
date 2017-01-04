@@ -13,7 +13,7 @@ def scrapeBeers():
     page_number = 1
 
     beer_dict = {}
-    for i in range(1):
+    for i in range(10):
 
         counter = 0
         page = br.open("http://www.drinkstore.ie/WORLD-%26-CRAFT-BEER/?page=" + str(page_number))
