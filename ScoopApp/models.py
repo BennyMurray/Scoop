@@ -18,8 +18,6 @@ class CraftBeer(models.Model):
         return self.beer_name
 
 
-
-
 class Test(models.Model):
     first_name = models.CharField(max_length=30, primary_key=True)
     last_name = models.CharField(max_length=30)

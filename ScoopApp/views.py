@@ -13,6 +13,12 @@ from findBeer import *
 
 from django.shortcuts import get_list_or_404, get_object_or_404
 
+
+
+#INDEX VIEW
+def indexView(request):
+    return render(request, 'ScoopApp/index.html', {})
+
 class CraftBeerAPIViewSet(viewsets.ModelViewSet):
     queryset = CraftBeer.objects.all()
     serializer_class = CraftBeerSerializer
