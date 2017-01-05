@@ -21,3 +21,16 @@ class CraftBeer(models.Model):
 class Test(models.Model):
     first_name = models.CharField(max_length=30, primary_key=True)
     last_name = models.CharField(max_length=30)
+
+
+class Visitor(models.Model):
+    visitor_number = models.IntegerField(primary_key=True)
+    ip_address = models.CharField(max_length=30)
+    geolocation = models.CharField(max_length=100, null=True)
+    search_parameters = models.CharField(max_length=100)
+
+    @classmethod
+    def create(cls, ip_address, geolocation, search_parameters):
+        visitor = cls(ip_address=ip_address, geolocation=geolocation, search_parameters=search_parameters)
+
+        return visitor

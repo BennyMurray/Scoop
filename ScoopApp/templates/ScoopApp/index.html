@@ -5,25 +5,22 @@
 
 {% block extra_head %}
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'css/powerange.css' %}"/>
+	<link rel="stylesheet" href="{% static 'css/animate.css' %}">
 {% endblock %}
 
 {% block content %}
 
-    <img src="{% static 'images/lemon.svg' %}">
-
-
 	<!--PRELOADER -->
 	<div id="preloader">
 		<div id="title_preloader">
-				<img id="preloader_cone" src="/static/cone.svg">
+				<img id="preloader_cone" src="{% static 'images/cone.svg' %}">
 				<h1 id="preloader_scoop" >Scoop</h1>
 				<h3 id="preloader_engine">beer search engine</h3>
 		</div>
 	</div>
 
 
-	<!-- Header: appears on fetching results -->
-	<header id="result_header"><h2 id="checkout">You might enjoy these bad boys. Or <span id="searchAgain" onclick="restart()">search again.</span></h2></header>
 
 
 	<!-- Main Content -->
@@ -63,36 +60,36 @@
 		<div id="ting">
 				<div id="image_container">
 						<div id="beer_colour">
-							<img id="pintglass" src="/static/pintglass.svg">
+							<img id="pintglass" src="{% static 'images/pintglass.svg' %}">
 						</div>
 				</div>
 
 				<div id="alcoholline_div">
-					<img id="alcoholline" src="/static/alcoholline.svg" class="info">
+					<img id="alcoholline" src="{% static 'images/alcoholline.svg' %}" class="info">
 
 
 					<h6 id="alcohol_text" class="info"> <span id="percentage">4.8</span>% (abv)</h6>
 
-					<img id="colourline" src="/static/colourline.svg" class="info">
+					<img id="colourline" src="{% static 'images/colourline.svg' %}" class="info">
 					<h6 id="colour_text" class="info"><span id="srm">0</span> SRM (colour)</h6>
 
-					<img id="hopline" class="info" src="/static/hopline.svg">
+					<img id="hopline" class="info" src="{% static 'images/hopline.svg' %}">
 					<h6 id="hop_text" class="info" ><span id="ibu">0</span> IBU</h6>
-					<img src="/static/cone.svg" id="cone1" class="info">
-					<img src="/static/cone.svg" id="cone2" class="info">
-					<img src="/static/cone.svg" id="cone3" class="info">
+					<img src="{% static 'images/cone.svg' %}" id="cone1" class="info">
+					<img src="{% static 'images/cone.svg' %}" id="cone2" class="info">
+					<img src="{% static 'images/cone.svg' %}" id="cone3" class="info">
 
-					<img id="lemonline" class="info" src="/static/lemonline.svg">
+					<img id="lemonline" class="info" src="{% static 'images/lemonline.svg' %}">
 					<h6 id="lemon_text" class="info"><span id="ibu">Acidity</span></h6>
-					<img src="/static/lemon.svg" id="lemon1" class="info">
-					<img src="/static/lemon.svg" id="lemon2" class="info">
-					<img src="/static/lemon.svg" id="lemon3" class="info">
+					<img src="{% static 'images/lemon.svg' %}" id="lemon1" class="info">
+					<img src="{% static 'images/lemon.svg' %}" id="lemon2" class="info">
+					<img src="{% static 'images/lemon.svg' %}" id="lemon3" class="info">
 				</div>
 		</div>
 
 					<!--Redundant? -->
 					<div id="searchbutton_div">
-						<img id="magglass" src="static/magglass.svg">
+						<img id="magglass" src="{% static 'images/magglass.svg' %}">
 						<h2 id="searchButton" class="animated infinite flipInY">Hit 'return' to search...</h2>
 					</div>
 	</div>
@@ -113,10 +110,10 @@
 	<!-- -------------SCRIPTS------------------ -->
 
 	<!-- JQuery (required by below libraries) -->
-		<script src="/static/jquery-2.1.3.min.js"></script>
+		<script src="{% static 'libraries/jquery-2.1.3.min.js' %}"></script>
 
 	<!-- Powerrange.js (allows customization of slider form (for volume slider) -->
-		<script src="/static/powerange.js"></script>
+		<script src="{% static 'libraries/powerange.js' %}"></script>
 
 	<!--Main Script	-->
 		<script type="text/javascript">

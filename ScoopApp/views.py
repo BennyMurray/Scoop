@@ -2,6 +2,7 @@ from django.shortcuts import render
 from rest_framework import viewsets
 from .models import CraftBeer
 from .models import Test
+from .models import Visitor
 from .serializers import CraftBeerSerializer
 from django.forms.models import model_to_dict
 import json
@@ -9,14 +10,34 @@ import sys
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from findBeer import *
+from geolocator import getGeoLocation
+from time import sleep
 
 
 from django.shortcuts import get_list_or_404, get_object_or_404
 
+def get_ip_address(request):
+    """ use requestobject to fetch client machine's IP Address """
+    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+    if x_forwarded_for:
+        ip = x_forwarded_for.split(',')[0]
+    else:
+        ip = request.META.get('REMOTE_ADDR')    ### Real IP address of client Machine
+    return ip
 
+
+def add_Visitor(visitor_number, ip_address, geolocation, search_parameters):
+    v, created = Visitor.objects.get_or_create(visitor_number=visitor_number, ip_address=ip_address, geolocation=geolocation, search_parameters=search_parameters)
+    print ("- Visitor: {0}, Created: {1}".format(str(v), str(created)))
+    return v
 
 #INDEX VIEW
 def indexView(request):
+    visitor_number = Visitor.objects.count() + 1
+    ip_address = get_ip_address(request)
+    geolocation = getGeoLocation(ip_address)
+    add_Visitor(visitor_number, ip_address, geolocation, "placeholder")
+
     return render(request, 'ScoopApp/index.html', {})
 
 

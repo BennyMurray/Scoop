@@ -32,6 +32,7 @@ header{
     padding-top: 1%;
     height: 5%;
     width: 100%;
+    z-index: 9999999;
 }
 
 .nav-link{
@@ -57,7 +58,7 @@ header{
     width: 95%;
     height: 80%;
     margin: 0 auto;
-    text-align: center;
+
 }
 
 

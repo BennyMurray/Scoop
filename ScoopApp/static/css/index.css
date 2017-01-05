@@ -1,0 +1,628 @@
+
+
+html{
+	width: 100%;
+	height: 100%;
+	font-size: 1em;
+	font-family: century gothic;
+
+}
+
+#preloader_cone{
+	position: relative;
+	height: auto;
+	width: 34%;
+}
+
+#preloader_scoop{
+	margin-top: 7%;
+	margin-bottom: 0%;
+}
+
+#preloader_engine{
+	position: relative;
+	bottom: 20%;
+}
+#wrapper{
+	position: relative;
+	top: 10%;
+	width: 100%;
+	opacity: 1;
+	height: 25%;
+	transition: opacity, 0.9s;
+	transition-timing-function: ease-out;
+}
+
+
+body{
+
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	text-align: center;
+}
+
+
+#searchButton{
+	font-size: 1.27vw;
+	position: absolute;
+	cursor: pointer;
+	width: 60%;
+	font-weight: lighter;
+	transition: opacity, 0.8s;
+	left: 44%;
+	top: 17%;
+}
+
+
+#searchbutton_div{
+
+	font-size: 1.3em;
+	position: relative;
+	cursor: pointer;
+	width: 25%;
+	height: 20%;
+
+	top: 140.6%;
+	left: 70.5%;
+	opacity: 0;
+
+	transition: opacity, 0.8s;
+
+}
+
+#beer_engine{
+	bottom: 10%;
+	font-size: 1.3vw;
+}
+
+#zangief{
+	height: auto;
+	width:40%;
+}
+
+
+#preloader  {
+
+     position: absolute;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     background-color: white;
+     z-index: 9999;
+     height: 100%;
+ }
+
+ #scoop{
+	 font-size: 4.2vw;
+ }
+
+#title{
+	position: relative;
+	right: 0.7%;
+}
+
+h3{
+	font-size: 1.25em;
+	font-weight: lighter;
+	position: relative;
+	margin-top: 1.4%;
+
+
+
+}
+
+
+
+
+
+
+
+#slider1{
+	transition: opacity, 0.5s;
+}
+
+#slider2{
+	transition: opacity, 0.5s;
+}
+#slider3{
+	transition: opacity, 0.5s;
+}
+#slider4{
+	transition: opacity, 0.5s;
+}
+
+
+
+
+#container{
+
+	position: relative;
+    left: 11%;
+	top: 20%;
+	height: 30%;
+	width: 33%;
+	z-index: 3000;
+
+}
+
+
+#title_preloader{
+	position: relative;
+	top: 25%;
+	height: 40%;
+	width:30%;
+	margin: 0 auto;
+	right: 2%;
+
+}
+h1{
+	font-size: 4em;
+	position: relative;
+	bottom: 20%;
+	margin-bottom: 0px;
+	margin-top: 10%;
+}
+
+#title_div{
+
+	margin: 0 auto;
+	margin-bottom: 24%;
+	position: relative;
+
+	height: 100%;
+	width: 50%;
+	left: 2%;
+}
+
+#slider_one{
+	position: relative;
+	top: 20%;
+	margin: 0 auto;
+	width: 70%;
+
+
+
+
+}
+
+h5{
+	font-family: century gothic;
+	font-weight: 200;
+	bottom: 17px;
+	position: relative;
+	font-size: 0.79em;
+	margin-top: 10%;
+
+}
+
+#image_container{
+
+
+	display: block;
+	position: relative;
+    left: 63%;
+	bottom: 20%;
+	height: 160%;
+	width: 30%;
+
+}
+
+
+#alcoholline_div{
+	position: relative;
+	height: auto;
+	width: 10%;
+	opacity: 1;
+	left: 70.0%;
+	bottom: 186%;
+
+	transition: opacity, 0.9s;
+
+}
+
+#alcoholline{
+
+	position: relative;
+	width:75%;
+	max-width:80%;
+	max-height: 100%;
+	height:auto;
+}
+#alcohol_text{
+
+	font-size: 0.9vw;
+	position: absolute;
+	bottom: 57%;
+	left: 40.5%;
+
+}
+
+#ting{
+	height: 120%;
+	width: 120%;
+	right: 15%;
+	top: 98%;
+
+	position: relative;
+}
+
+
+.info{
+	transition: opacity, 0.9s;
+	opacity:0;
+}
+
+
+
+
+
+#colourline_div{
+	position: relative;
+	bottom: 204%;
+	height: auto;
+	width: 30%;
+	opacity: 1;
+	transition: opacity, 0.9s;
+}
+
+
+
+#colourline{
+
+	position: absolute;
+	width:80%;
+	max-width:100%;
+	max-height: 100%;
+	height:auto;
+	right: 159%;
+	top: 74%;
+
+}
+
+#colour_text{
+	font-size: 0.9vw;
+	position: absolute;
+	top: 82.4%;
+	right: 166.9%;
+	width: 70%;
+
+}
+
+
+
+#hopline_div{
+	position: relative;
+    left: 60.6%;
+	bottom: 232%;
+	height: auto;
+	width: 30%;
+	opacity: 1;
+
+	transition: opacity, 0.9s;
+
+
+}
+
+
+
+
+#hopline{
+
+position: absolute;
+	width:105%;
+	max-width:105%;
+	max-height: 100%;
+	height:auto;
+	top: 133.2%;
+	left: 3%;
+}
+
+#hop_text{
+	opacity: 0;
+	position: absolute;
+	font-size: 0.9vw;
+	position: absolute;
+	top: 139.6%;
+	right: 58.4%;
+}
+
+
+
+
+#hop_pics{
+	width: 51%;
+	transition: opacity, 0.9s;
+	position: absolute;
+	top: 145%;
+	left: 37.5%;
+	height: auto;
+	text-align: left;
+}
+
+
+
+
+
+
+#lemonline_div{
+	position: relative;
+    left: 45.3%;
+	bottom: 255%;
+	height: auto;
+	width: 30%;
+	opacity: 1;
+	transition: opacity, 0.9s;
+
+
+}
+
+#lemonline{
+
+	position: absolute;
+	width:100%;
+	max-width:100%;
+	max-height: 100%;
+	height:auto;
+	top: 188%;
+	right: 145%;
+}
+
+
+
+#lemon_text{
+
+	position: absolute;
+	font-size: 0.9vw;
+	position: absolute;
+	top: 165%;
+	right: 159%;
+}
+
+
+
+
+#cone1{
+	position: absolute;
+
+	transition: opacity, 0.9s;
+	height: auto;
+width: 12%;
+	top: 161%;
+	right: 42%;
+
+}
+
+#cone2{
+	position: absolute;
+
+	transition: opacity, 0.9s;
+	height: auto;
+	width: 12%;
+	top: 161%;
+	right: 25%;
+
+}
+
+#cone3{
+	position: absolute;
+
+	transition: opacity, 0.9s;
+	height: auto;
+	width: 12%;
+	top: 161%;
+	right: 7.2%;
+}
+
+
+
+#lemon_pics{
+	height: 20%;
+	width: 54%;
+	right: 184%;
+	top: 165%;
+	position: absolute;
+
+
+}
+
+#lemon1{
+	position: absolute;
+
+	transition: opacity, 0.9s;
+	height: auto;
+	width: 13%;
+	top: 186%;
+	right: 191%;
+}
+
+#lemon2{
+	position: absolute;
+
+	transition: opacity, 0.9s;
+	height: auto;
+	width: 13%;
+	top: 186%;
+	right: 209%;
+}
+
+#lemon3{
+	position: absolute;
+
+	transition: opacity, 0.9s;
+	height: auto;
+	width: 13%;
+	top: 186%;
+	right: 226%;
+}
+
+
+
+
+#pintglass{
+		width: 112%;
+	height: auto;
+	position: absolute;
+
+	left: 0px;
+	top: 0px;
+	z-index: 2000;
+
+}
+
+#beer_colour{
+
+
+
+	width: 28%;
+	height: 0;
+	padding-bottom: 53%;
+	background-color: none;
+	position: relative;
+
+	opacity: 1;
+	z-index: -1;
+	transition: background-color 0.3s;
+}
+
+#result_header{
+
+	display: none;
+
+}
+
+
+#result_wrapper{
+
+	position: relative;
+	top: 20%;
+	display: none;
+	height: 65%;
+	width: 90%;
+	margin: 0 auto;
+	text-align: center;
+	bottom: 100%;
+
+}
+
+
+.beer_container{
+	position: relative;
+	top: 2%;
+
+	height: 95%;
+	width: 14%;
+	display: inline-block;
+}
+
+.beer{
+	max-height: 100%;
+	max-width: 100%;
+	min-height: 65%;
+	cursor: pointer;
+	opacity: 0;
+	transition: opacity, 0.5s;
+	transition-timing-function: ease-out;
+
+}
+
+.beer:hover {
+	position: relative;
+   bottom: 4%;
+
+}
+
+#checkout{
+	position: relative;
+	font-size: 1em;
+	font-weight: normal;
+	margin-bottom: 5%;
+	margin-top: 5%;
+	opacity: 0;
+	transition: opacity, 0.9s;
+	transition-timing-function: ease-out;
+}
+
+#searchAgain{
+	font-style: italic;
+	color: #666;
+	cursor: pointer;
+}
+
+
+#home{
+	position: absolute;
+	left: 2%;
+	font-size: 0.9em;
+	opacity: 1;
+	transition: opacity, 0.5s;
+	transition-timing-function: ease-out;
+
+}
+
+
+
+
+@media screen and ( max-width: 600px ) and ( max-height: 600px ){
+
+body{
+	overflow: scroll;
+}
+
+
+
+#container{
+	display: block;
+	position: relative;
+
+	height: 30%;
+	width: 75%;
+	z-index: 3000;
+	left: 10%;
+	top: 90%;
+
+}
+
+	#ting{
+
+	display: block;
+	height: 160%;
+	width: 160%;
+	position: relative;
+	bottom: 10%;
+	right: 59%;
+}
+
+	#alcoholline_div{
+	position: relative;
+	height: auto;
+	width: 11%;
+	opacity: 1;
+	left: 70.0%;
+	bottom: 186%;
+
+	transition: opacity, 0.9s;
+
+}
+	#colour_text{
+		font-size: 1.5vw;
+	}
+
+	#lemon_text{
+		font-size: 1.5vw;
+	}
+
+	#alcohol_text{
+		font-size: 1.5vw;
+	}
+
+	#hop_text{
+		font-size: 1.5vw;
+	}
+}
+
+
+
+
+
