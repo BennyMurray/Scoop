@@ -66,25 +66,41 @@ class TestViewSet(viewsets.ModelViewSet):
 
 
 
+
+
+
+
+        #Convert model objects to dictionary
         new_dict = {}
-        for i in range(1,8):
+        for i in range(1, CraftBeer.objects.count()+1):
             my_obj = CraftBeer.objects.get(sequence_added=i)
             x = model_to_dict(my_obj,
-                          fields=['beer_name', 'beerID', 'ABV', 'IBU', 'SRM', 'acidity', 'image_link'],  # fields to include
-                          exclude=['sequence_added'],  # fields to exclude
-                          )
-            #print >> sys.stderr, x['beer_name']
+                              fields=['beer_name', 'beerID', 'ABV', 'IBU', 'SRM', 'acidity', 'image_link'],
+                              # fields to include
+                              exclude=['sequence_added'],  # fields to exclude
+                              )
+            # print >> sys.stderr, x['beer_name']
             new_dict[x['beer_name']] = [x['ABV'], x['IBU'], x['SRM'], x['acidity'], x['image_link']]
 
+        print >> sys.stderr, len(new_dict)
 
-        #Receive Data from user
+
+
+
+
+
+
+
+
+
+        # Receive Data from user
         abv = request.GET.get('a', '')
         colour = request.GET.get('b', '')
         ibu = request.GET.get('c', '')
         acidity = request.GET.get('d', '')
 
-        user_input = [float(abv), float(colour), float(ibu), float(acidity)]
-        #user_input = [10,10,10,10]
+        #user_input = [float(abv), float(colour), float(ibu), float(acidity)]
+        user_input = [10,10,10,10]
         print >> sys.stderr, "this is the callback", user_input
 
         #Run user's data through beer-finding algorithm and return the results as JSON

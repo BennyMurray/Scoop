@@ -58,9 +58,9 @@ def find_beer(choice, dict):
 
     #creates dict for json export
     result_dict = {}
-    dict_names = ["first","second","third","fourth","fifth","sixth"]
+    dict_names = ["first","second","third","fourth","fifth","sixth", "seventh","eighth","ninth","tenth","eleventh","twelfth"]
 
-    for i in range(6):
+    for i in range(12):
         beer_value_list = dict[sorted_beers[i][0]]
         result_dict[dict_names[i]] = {"name": sorted_beers[i][0], "ABV" : beer_value_list[0], "IBU": beer_value_list[1], "SRM" : beer_value_list[2], "acidity" : beer_value_list[3], "image_link": beer_value_list[4]}
 

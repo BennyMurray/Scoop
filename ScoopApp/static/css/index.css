@@ -31,6 +31,7 @@ html{
 	height: 25%;
 	transition: opacity, 0.9s;
 	transition-timing-function: ease-out;
+	background-color: rgba(255,255,255,1);
 }
 
 
@@ -136,6 +137,7 @@ h3{
 
 .slider_label{
 	top: 30%;
+	color: #2d2d2d;
 }
 
 
@@ -249,7 +251,7 @@ h5{
 	width: 120%;
 	right: 15%;
 	top: 68%;
-
+	z-index: 1000;
 	position: relative;
 }
 
@@ -504,6 +506,7 @@ width: 12%;
 	right: 1%;
 	text-align: center;
 
+
 }
 
 #results_bottom_row{
@@ -516,7 +519,7 @@ width: 12%;
     float: left;
     width: 30%;
 	height: 100%;
-	border: solid 1px black;
+
 	text-align: center;
 }
 
@@ -524,7 +527,7 @@ width: 12%;
     float: right;
     width: 69%;
 	height: 100%;
-	border: solid 1px black;
+	bottom: 7;
 	position: relative;
 	left: 5%;
 }
@@ -562,6 +565,7 @@ width: 12%;
 	max-height: 30%;
 	width: 15%;
 	display: inline-block;
+	z-index: 1000;
 }
 
 .beer{

@@ -117,7 +117,7 @@
             <div id="results_bottom_row">
                 <div class="beer_container"><a id="beer7_link"><img id="beer7" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_1269.jpg"></a></div>
                 <div class="beer_container"><a id="beer8_link"><img id="beer8" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_365.jpg"></a></div>
-                <div class="beer_container"><a id="beer9_link"><img id="beer9" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_70770.jpg"></a></div>
+                <div class="beer_container"><a id="beer9_link"><img id="beer9" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_365.jpg"></a></div>
                 <div class="beer_container"><a id="beer10_link"><img id="beer10" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_173659.jpg"></a></div>
                 <div class="beer_container"><a id="beer11_link"><img id="beer11" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_6925.jpg"></a></div>
                 <div class="beer_container"><a id="beer12_link"><img id="beer12" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_9183.jpg"></a></div>
@@ -173,6 +173,7 @@
 						document.getElementById('beer_engine').style.fontSize = "1.25vw";
 						document.getElementById('beer_engine').innerHTML = "hit <b>'Return'</b> to search!";
 
+
 						var d = document.getElementById("scoop");
 						d.className += " animated bounceIn";
 						document.getElementById('title_div').style.cursor = 'pointer';
@@ -186,7 +187,7 @@
 						document.getElementById('scoop').innerHTML = 'Scoop';
 						document.getElementById('beer_engine').style.fontSize = "1.3vw";
 						document.getElementById('beer_engine').innerHTML = "beer search engine";
-						var d = document.getElementById("scoop");
+                        var d = document.getElementById("scoop");
 						d.className += " animated bounceOut";
 						document.getElementById('title_div').style.cursor = 'none';
 						document.getElementById('searchbutton_div').style.opacity = '0';
@@ -343,20 +344,23 @@
 				document.getElementById('wrapper').style.opacity = '0';
 				document.getElementById('result_wrapper').style.display = 'inline-block';
 
-				setTimeout(function(){document.getElementById('beer1').style.opacity = '1';},10);
-				setTimeout(function(){document.getElementById('beer2').style.opacity = '1';},210);
-				setTimeout(function(){document.getElementById('beer3').style.opacity = '1';},410);
-				setTimeout(function(){document.getElementById('beer4').style.opacity = '1';},610);
-				setTimeout(function(){document.getElementById('beer5').style.opacity = '1';}, 810);
-				setTimeout(function(){document.getElementById('beer6').style.opacity = '1';},1010);
+                var left = document.getElementById("left-side");
+						left.className += " animated flipInY";
 
-                setTimeout(function(){document.getElementById('beer7').style.opacity = '1';},1200);
-				setTimeout(function(){document.getElementById('beer8').style.opacity = '1';},1410);
-				setTimeout(function(){document.getElementById('beer9').style.opacity = '1';},1610);
-				setTimeout(function(){document.getElementById('beer10').style.opacity = '1';},1810);
-				setTimeout(function(){document.getElementById('beer11').style.opacity = '1';}, 2010);
-				setTimeout(function(){document.getElementById('beer12').style.opacity = '1';},2210);
-				setTimeout(function(){document.getElementById('checkout').style.opacity = '1';},2410);
+				setTimeout(function(){document.getElementById('beer1').className += " animated bounceIn";},10);
+				setTimeout(function(){document.getElementById('beer2').className += " animated bounceIn";},210);
+				setTimeout(function(){document.getElementById('beer3').className += " animated bounceIn";},410);
+				setTimeout(function(){document.getElementById('beer4').className += " animated bounceIn";},610);
+				setTimeout(function(){document.getElementById('beer5').className += " animated bounceIn";}, 810);
+				setTimeout(function(){document.getElementById('beer6').className += " animated bounceIn";},1010);
+
+                setTimeout(function(){document.getElementById('beer7').className += " animated bounceIn";},1200);
+				setTimeout(function(){document.getElementById('beer8').className += " animated bounceIn";},1410);
+				setTimeout(function(){document.getElementById('beer9').className += " animated bounceIn";},1610);
+				setTimeout(function(){document.getElementById('beer10').className += " animated bounceIn";},1810);
+				setTimeout(function(){document.getElementById('beer11').className += " animated bounceIn";}, 2010);
+				setTimeout(function(){document.getElementById('beer12').className += " animated bounceIn";},2210);
+				setTimeout(function(){document.getElementById('checkout').className += " animated bounceIn";},2410);
 
                 setTimeout(function(){$( ".beer" ).css( "transition", "0.2s" );},2410);
 
