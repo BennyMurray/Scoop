@@ -36,11 +36,12 @@ header{
 }
 
 .nav-link{
-    font-size: 0.6vw;
+    font-size: 0.77vw;
     float: right;
     margin-right: 1.5%;
     position: relative;
     right: 12%;
+    top: 15%;
     cursor: pointer;
     color: #666;
 }
@@ -54,7 +55,7 @@ header{
 
 .main_content{
     overflow: hidden;
-    border: solid 1px black;
+
     width: 95%;
     height: 80%;
     margin: 0 auto;
@@ -88,7 +89,7 @@ footer{
 
 #signature{
     color: #666;
-    font-size: 0.5vw;
+    font-size: 0.7vw;
     margin-left: 2%;
     float: left;
 }

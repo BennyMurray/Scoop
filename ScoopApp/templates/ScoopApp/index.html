@@ -35,29 +35,29 @@
 				<div id="slider_one">
 					<div id="slider1">
 						<input type="text" id="volume1" class="strength" />
-						<h5>Strength</h5>
+						<h5 class="slider_label">Strength</h5>
 					</div>
 
 					<div id="slider2">
 						<input type="text" id="volume2" class="colour" />
-						<h5>Colour</h5>
+						<h5 class="slider_label">Colour</h5>
 					</div>
 
 					<div id="slider3">
 						<input type="text" id="volume3" class="bitterness" />
-						<h5>Bitterness</h5>
+						<h5 class="slider_label">Bitterness</h5>
 					</div>
 
 					<div id="slider4">
 						<input type="text" id="volume4" class="funkiness" />
-						<h5>Acidity/Funk</h5>
+						<h5 class="slider_label">Acidity/Funk</h5>
 					</div>
 				</div>
 			</div>
 
 
 		<!-- Beer glass and attributes -->
-		<div id="ting">
+		<div id="beer_glass_container">
 				<div id="image_container">
 						<div id="beer_colour">
 							<img id="pintglass" src="{% static 'images/pintglass.svg' %}">
@@ -396,7 +396,7 @@
 			$(document).keypress(function(e) {
 			if(e.which == 13) {
 
-			$.getJSON("/api/Craftbeers/", {
+			$.getJSON("http://scoop.pythonanywhere.com/api/Craftbeers/", {
 
 				a:elem.value,
 				b:elem2.value,
