@@ -4,7 +4,7 @@ html{
 	width: 100%;
 	height: 100%;
 	font-size: 1em;
-	font-family: century gothic;
+
 
 }
 
@@ -188,7 +188,7 @@ h1{
 }
 
 h5{
-	font-family: century gothic;
+
 	font-weight: 200;
 	bottom: 17px;
 	position: relative;
@@ -323,7 +323,7 @@ position: absolute;
 	opacity: 0;
 	position: absolute;
 	font-size: 0.9vw;
-	position: absolute;
+
 	top: 139.6%;
 	right: 58.4%;
 }
@@ -478,7 +478,7 @@ width: 12%;
 	width: 28%;
 	height: 0;
 	padding-bottom: 53%;
-	background-color: none;
+	background-color: transparent;
 	position: relative;
 
 	opacity: 1;
