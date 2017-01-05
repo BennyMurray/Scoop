@@ -40,7 +40,7 @@
 
 					<div id="slider2">
 						<input type="text" id="volume2" class="colour" />
-						<h5 class="slider_label">Colour</h5>
+						<h5 class="slider_label" id="color">Colour</h5>
 					</div>
 
 					<div id="slider3">
@@ -396,8 +396,8 @@
 			$(document).keypress(function(e) {
 			if(e.which == 13) {
 
-			$.getJSON("http://scoop.pythonanywhere.com/api/Craftbeers/", {
-
+{#			$.getJSON("http://scoop.pythonanywhere.com/api/Craftbeers/", {#}
+            $.getJSON("/api/Craftbeers/", {
 				a:elem.value,
 				b:elem2.value,
 				c:elem3.value,
@@ -405,23 +405,24 @@
 
 			}, function(data){
 
+                    document.getElementById('color').innerHTML = JSON.stringify(data.first['name']);
 
-					document.getElementById("beer1").src=data.result[0].first[1];
-					document.getElementById("beer2").src=data.result[0].second[1];
-					document.getElementById("beer3").src=data.result[0].third[1];
-					document.getElementById("beer4").src=data.result[0].fourth[1];
-					document.getElementById("beer5").src=data.result[0].fifth[1];
-					document.getElementById("beer6").src=data.result[0].sixth[1];
-
-					document.getElementById("beer1_link").href="http://www.ratebeer.com/beer/"+data.result[0].first[2]+"/";
-					document.getElementById("beer2_link").href="http://www.ratebeer.com/beer/"+data.result[0].second[2]+"/";
-					document.getElementById("beer3_link").href="http://www.ratebeer.com/beer/"+data.result[0].third[2]+"/";
-
-					document.getElementById("beer4_link").href="http://www.ratebeer.com/beer/"+data.result[0].fourth[2]+"/";
-					document.getElementById("beer5_link").href="http://www.ratebeer.com/beer/"+data.result[0].fifth[2]+"/";
-					document.getElementById("beer6_link").href="http://www.ratebeer.com/beer/"+data.result[0].sixth[2]+"/";
-
-					searchResults();
+{#					document.getElementById("beer1").src=data.result[0].first[1];#}
+{#					document.getElementById("beer2").src=data.result[0].second[1];#}
+{#					document.getElementById("beer3").src=data.result[0].third[1];#}
+{#					document.getElementById("beer4").src=data.result[0].fourth[1];#}
+{#					document.getElementById("beer5").src=data.result[0].fifth[1];#}
+{#					document.getElementById("beer6").src=data.result[0].sixth[1];#}
+{##}
+{#					document.getElementById("beer1_link").href="http://www.ratebeer.com/beer/"+data.result[0].first[2]+"/";#}
+{#					document.getElementById("beer2_link").href="http://www.ratebeer.com/beer/"+data.result[0].second[2]+"/";#}
+{#					document.getElementById("beer3_link").href="http://www.ratebeer.com/beer/"+data.result[0].third[2]+"/";#}
+{##}
+{#					document.getElementById("beer4_link").href="http://www.ratebeer.com/beer/"+data.result[0].fourth[2]+"/";#}
+{#					document.getElementById("beer5_link").href="http://www.ratebeer.com/beer/"+data.result[0].fifth[2]+"/";#}
+{#					document.getElementById("beer6_link").href="http://www.ratebeer.com/beer/"+data.result[0].sixth[2]+"/";#}
+{##}
+{#					searchResults();#}
 
 			});
 			}

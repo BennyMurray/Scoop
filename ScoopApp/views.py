@@ -76,6 +76,18 @@ class TestViewSet(viewsets.ModelViewSet):
             #print >> sys.stderr, x['beer_name']
             new_dict[x['beer_name']] = [x['ABV'], x['IBU'], x['SRM'], x['acidity'], x['image_link']]
 
-        json_for_export = find_beer([100,100,100,100], new_dict)
+
+        #Receive Data from user
+        abv = request.GET.get('a', '')
+        colour = request.GET.get('b', '')
+        ibu = request.GET.get('c', '')
+        acidity = request.GET.get('d', '')
+
+        user_input = [float(abv), float(colour), float(ibu), float(acidity)]
+        #user_input = [10,10,10,10]
+        print >> sys.stderr, "this is the callback", user_input
+
+        #Run user's data through beer-finding algorithm and return the results as JSON
+        json_for_export = find_beer(user_input, new_dict)
 
         return Response(json_for_export)
