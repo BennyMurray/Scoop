@@ -491,39 +491,83 @@ width: 12%;
 	transition: background-color 0.3s;
 }
 
-#result_header{
-
-	display: none;
-
-}
 
 
 #result_wrapper{
 
 	position: relative;
-	top: 20%;
+	top: 10%;
 	display: none;
-	height: 65%;
+	height: 86%;
 	width: 90%;
 	margin: 0 auto;
+	right: 1%;
 	text-align: center;
-	bottom: 100%;
 
 }
 
+#results_bottom_row{
+	margin-top: 2%;
+
+}
+
+
+#left-side {
+    float: left;
+    width: 30%;
+	height: 100%;
+	border: solid 1px black;
+	text-align: center;
+}
+
+#right-side {
+    float: right;
+    width: 69%;
+	height: 100%;
+	border: solid 1px black;
+	position: relative;
+	left: 5%;
+}
+
+
+#search_complete{
+	font-size: 2.9vw;
+	position: relative;
+	bottom: 0%;
+	margin-bottom: 0px;
+	margin-top:36%;
+	margin-bottom: 2%;
+}
+
+#simply_hover{
+
+	font-size: 1.36vw;
+	font-weight: lighter;
+	position: relative;
+	margin-bottom: 4%;
+
+}
+
+#symbols{
+
+	position: relative;
+	max-width: 90%;
+
+}
 
 .beer_container{
 	position: relative;
 	top: 2%;
-
-	height: 95%;
-	width: 14%;
+	margin-left: -20px;
+	max-height: 30%;
+	width: 15%;
 	display: inline-block;
 }
 
 .beer{
-	max-height: 100%;
-	max-width: 100%;
+	filter: grayscale(1);
+	max-height: 65%;
+	max-width: 65%;
 	min-height: 65%;
 	cursor: pointer;
 	opacity: 0;
@@ -535,6 +579,8 @@ width: 12%;
 .beer:hover {
 	position: relative;
    bottom: 4%;
+	filter: none;
+
 
 }
 
