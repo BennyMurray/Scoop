@@ -51,6 +51,7 @@ class CraftBeerAPIViewSet(viewsets.ModelViewSet):
 
 
 class TestViewSet(viewsets.ModelViewSet):
+
     queryset = CraftBeer.objects.all()
     serializer_class = CraftBeerSerializer
 
@@ -64,9 +65,9 @@ class TestViewSet(viewsets.ModelViewSet):
     def list(self, request, *args, **kwargs):
 
 
-        from django.core import serializers
+
         new_dict = {}
-        for i in range(1,150):
+        for i in range(1,8):
             my_obj = CraftBeer.objects.get(sequence_added=i)
             x = model_to_dict(my_obj,
                           fields=['beer_name', 'beerID', 'ABV', 'IBU', 'SRM', 'acidity', 'image_link'],  # fields to include
@@ -76,5 +77,5 @@ class TestViewSet(viewsets.ModelViewSet):
             new_dict[x['beer_name']] = [x['ABV'], x['IBU'], x['SRM'], x['acidity'], x['image_link']]
 
         json_for_export = find_beer([100,100,100,100], new_dict)
-        print >> sys.stderr, "\n",json_for_export
+
         return Response(json_for_export)

@@ -14,7 +14,7 @@ from rest_framework import generics
 class CraftBeerSerializer(serializers.ModelSerializer):
     class Meta:
         model = CraftBeer
-
+        fields = '__all__'
     def get_queryset(self):
         """
         This view should return a list of all the purchases
