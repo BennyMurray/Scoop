@@ -14,9 +14,8 @@
 	<!--PRELOADER -->
 	<div id="preloader">
 		<div id="title_preloader">
-				<img id="preloader_cone" src="{% static 'images/cone.svg' %}">
-				<h1 id="preloader_scoop" >Scoop</h1>
-				<h3 id="preloader_engine">beer search engine</h3>
+				<img id="splash_logo" src="{% static 'images/splashlogo.svg' %}">
+
 		</div>
 	</div>
 
@@ -106,12 +105,12 @@
 
         <div id="right-side">
             <div id="results_top_row">
-                <div class="beer_container"><a id="beer1_link"><img id="beer1" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_1269.jpg"></a></div>
-                <div class="beer_container"><a id="beer2_link"><img id="beer2" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_365.jpg"></a></div>
-                <div class="beer_container"><a id="beer3_link"><img id="beer3" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_70770.jpg"></a></div>
-                <div class="beer_container"><a id="beer4_link"><img id="beer4" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_173659.jpg"></a></div>
-                <div class="beer_container"><a id="beer5_link"><img id="beer5" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_6925.jpg"></a></div>
-                <div class="beer_container"><a id="beer6_link"><img id="beer6" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_9183.jpg"></a></div>
+                <div class="beer_container"><a id="beer1_link"><img id="beer1" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_1269.jpg" onmouseover="displayBeerDetails(1)"></a></div>
+                <div class="beer_container"><a id="beer2_link"><img id="beer2" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_365.jpg" onmouseover="displayBeerDetails(2)"></a></div>
+                <div class="beer_container"><a id="beer3_link"><img id="beer3" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_70770.jpg" onmouseover="displayBeerDetails(3)"></a></div>
+                <div class="beer_container"><a id="beer4_link"><img id="beer4" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_173659.jpg" onmouseover="displayBeerDetails(4)"></a></div>
+                <div class="beer_container"><a id="beer5_link"><img id="beer5" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_6925.jpg" onmouseover="displayBeerDetails(5)"></a></div>
+                <div class="beer_container"><a id="beer6_link"><img id="beer6" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_9183.jpg" onmouseover="displayBeerDetails(6)"></a></div>
             </div>
 
             <div id="results_bottom_row">
@@ -395,6 +394,44 @@
 			}
 
 
+			function displayBeerDetails(position){
+
+                switch(position)
+            {
+                case 1:
+
+                    document.getElementById('search_complete').innerHTML = jsonHolder[0];
+                    break;
+
+                case 2:
+                    document.getElementById('search_complete').innerHTML = jsonHolder[1];
+                    break;
+
+                case 3:
+                    document.getElementById('search_complete').innerHTML = jsonHolder[2];
+                    break;
+
+                case 4:
+                    document.getElementById('search_complete').innerHTML = jsonHolder[3];
+                    break;
+
+                case 5:
+                    document.getElementById('search_complete').innerHTML = jsonHolder[4];
+                    break;
+
+                case 6:
+                    document.getElementById('search_complete').innerHTML = jsonHolder[5];
+                    break;
+
+                default:
+                    break;
+
+
+            }
+
+            }
+
+
 			<!-- Sets value of a slider -->
 			function setSliderValue (sliderInstance, newValue) {
 			  console.assert( (newValue > sliderInstance.options.min && newValue < sliderInstance.options.max),
@@ -427,6 +464,8 @@
 			}
 
 
+			var jsonHolder = [];
+
 			<!-- ON KEY PRESS (Enter): sends and receives JSON from server -->
 			$(document).keypress(function(e) {
 			if(e.which == 13) {
@@ -447,6 +486,15 @@
 					document.getElementById("beer4").src=JSON.parse(JSON.stringify(data.fourth['image_link']))
 					document.getElementById("beer5").src=JSON.parse(JSON.stringify(data.fifth['image_link']))
 					document.getElementById("beer6").src=JSON.parse(JSON.stringify(data.sixth['image_link']))
+
+
+                    jsonHolder.push(JSON.parse(JSON.stringify(data.first['name'])));
+                    jsonHolder.push(JSON.parse(JSON.stringify(data.second['name'])));
+                    jsonHolder.push(JSON.parse(JSON.stringify(data.third['name'])));
+                    jsonHolder.push(JSON.parse(JSON.stringify(data.fourth['name'])));
+                    jsonHolder.push(JSON.parse(JSON.stringify(data.fifth['name'])));
+                    jsonHolder.push(JSON.parse(JSON.stringify(data.sixth['name'])));
+
 {##}
 {#					document.getElementById("beer1_link").href="http://www.ratebeer.com/beer/"+data.result[0].first[2]+"/";#}
 {#					document.getElementById("beer2_link").href="http://www.ratebeer.com/beer/"+data.result[0].second[2]+"/";#}

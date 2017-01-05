@@ -8,10 +8,10 @@ html{
 
 }
 
-#preloader_cone{
+#splash_logo{
 	position: relative;
 	height: auto;
-	width: 34%;
+	width: 100%;
 }
 
 #preloader_scoop{
@@ -90,7 +90,7 @@ body{
      left: 0;
      right: 0;
      bottom: 0;
-     background-color: white;
+     background-color: #2d2d2d;
      z-index: 9999;
      height: 100%;
  }
@@ -519,7 +519,6 @@ width: 12%;
     float: left;
     width: 30%;
 	height: 100%;
-
 	text-align: center;
 }
 
@@ -527,9 +526,10 @@ width: 12%;
     float: right;
     width: 69%;
 	height: 100%;
-	bottom: 7;
+	bottom: 7%;
 	position: relative;
 	left: 5%;
+
 }
 
 
@@ -562,7 +562,7 @@ width: 12%;
 	position: relative;
 	top: 2%;
 	margin-left: -20px;
-	max-height: 30%;
+	max-height: 10%;
 	width: 15%;
 	display: inline-block;
 	z-index: 1000;
