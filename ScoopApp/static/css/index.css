@@ -109,12 +109,14 @@ h3{
 	font-weight: lighter;
 	position: relative;
 	margin-top: 1.4%;
-
-
-
 }
 
 
+.value_titles{
+	font-size: 1.3vw;
+	display: inline-block;
+	margin-right: 3%;
+}
 
 
 
