@@ -1,9 +1,11 @@
+
+from __future__ import division
 from django.shortcuts import render
 from rest_framework import viewsets
 from .models import CraftBeer
 from .models import Test
 from .models import Visitor
-from .serializers import CraftBeerSerializer
+from .serializers import CraftBeerSerializer, VisitorSerializer
 from django.forms.models import model_to_dict
 import json
 import sys
@@ -12,6 +14,8 @@ from rest_framework.response import Response
 from findBeer import *
 from geolocator import getGeoLocation
 from time import sleep
+
+from ast import literal_eval
 
 
 from django.shortcuts import get_list_or_404, get_object_or_404
@@ -45,15 +49,18 @@ def indexView(request):
 def mapView(request):
     return render(request, 'ScoopApp/map.html', {})
 
+
+
+
+
+
+
+
 class CraftBeerAPIViewSet(viewsets.ModelViewSet):
     queryset = CraftBeer.objects.all()
     serializer_class = CraftBeerSerializer
 
 
-class TestViewSet(viewsets.ModelViewSet):
-
-    queryset = CraftBeer.objects.all()
-    serializer_class = CraftBeerSerializer
 
 
 
@@ -94,15 +101,6 @@ class TestViewSet(viewsets.ModelViewSet):
 
 
 
-
-
-
-
-
-
-
-
-
         # Receive Data from user
         abv = request.GET.get('a', '')
         colour = request.GET.get('b', '')
@@ -116,8 +114,9 @@ class TestViewSet(viewsets.ModelViewSet):
         user_input = [float(abv), float(colour), float(ibu), float(acidity)]
 
         # Create Visitor Object with Search Parameters
-        visitor_number = Visitor.objects.count() + 1
-        add_Visitor(visitor_number, ip_address, user_region, str(user_input))
+        if Visitor.objects.filter(ip_address=ip_address).DoesNotExist:
+            visitor_number = Visitor.objects.count() + 1
+            add_Visitor(visitor_number, ip_address, user_region, str(user_input))
 
 
 
@@ -132,5 +131,80 @@ class TestViewSet(viewsets.ModelViewSet):
 
         #Run user's data through beer-finding algorithm and return the results as JSON
         json_for_export = find_beer(user_input, new_dict)
+
+        return Response(json_for_export)
+
+
+
+def averageListValues(a):
+    return round(sum(a) / len(a),1)
+
+
+
+
+class VisitorAPIViewSet(viewsets.ModelViewSet):
+    queryset = Visitor.objects.all()
+    serializer_class = VisitorSerializer
+
+
+
+    def retrieve(self, request, *args, **kwargs):
+        return Response({'something1': 'my custom JSON1'})
+
+
+
+    def list(self, request, *args, **kwargs):
+
+
+
+
+
+
+        #Convert model objects to dictionary
+        leinster_list = []
+        munster_list = []
+        ulster_list = []
+        connaught_list = []
+
+        # for i in range(1, CraftBeer.objects.count()+1):
+        for visitor in Visitor.objects.all():
+
+            x = model_to_dict(visitor,
+                              fields=['ip_address', 'geolocation', 'search_parameters'],
+                              # fields to include
+                              exclude=[''],  # fields to exclude
+                              )
+            # print >> sys.stderr, x['beer_name']
+
+            # list_of_lists.append(literal_eval(x['search_parameters']))
+            if x['search_parameters'] != 'placeholder':
+                if x['geolocation'].lower() == 'leinster':
+                    leinster_list.append(literal_eval(x['search_parameters']))
+                elif x['geolocation'].lower() == 'munster':
+                    munster_list.append(literal_eval(x['search_parameters']))
+                elif x['geolocation'].lower() == 'ulster':
+                    ulster_list.append(literal_eval(x['search_parameters']))
+                elif x['geolocation'].lower() == 'connaught':
+                    connaught_list.append(literal_eval(x['search_parameters']))
+
+
+
+            json_for_export = {
+
+                'leinster': map(averageListValues, zip(*leinster_list)),
+                'munster': map(averageListValues, zip(*munster_list)),
+                'ulster': map(averageListValues, zip(*ulster_list)),
+                'connaught': map(averageListValues, zip(*connaught_list))
+
+                               }
+
+        # print >> '!!!!!!!', type(ip_address) is str
+        # Visitor.objects.get(ip_address='128').update(search_parameters='string')
+        # print >> sys.stderr, "USER INPUT RECORDED"
+
+
+
+        #Run user's data through beer-finding algorithm and return the results as JSON
+
 
         return Response(json_for_export)

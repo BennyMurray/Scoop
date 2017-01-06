@@ -1,4 +1,4 @@
-var rsr = Raphael('rsr', '710', '910'); 
+var rsr = Raphael('rsr', '710', '910');
 
 
 

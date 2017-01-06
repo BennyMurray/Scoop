@@ -30,12 +30,14 @@ body{
 
 #container:hover {
     color: #FF00FF;
+
 }
 
 
 #spanhovering {
     cursor: pointer;
 }
+
 #divtoshow {
     position: absolute;
     opacity: 1;

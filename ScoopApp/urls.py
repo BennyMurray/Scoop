@@ -1,12 +1,13 @@
 from django.conf.urls import url, include
 from rest_framework import routers
-from ScoopApp.views import TestViewSet
+from ScoopApp.views import CraftBeerAPIViewSet, VisitorAPIViewSet
 from . import views
 from ScoopApp.views import indexView
 
 
 router = routers.DefaultRouter()
-router.register(r'Craftbeers', TestViewSet)
+router.register(r'Craftbeers', CraftBeerAPIViewSet)
+router.register(r'Visitors', VisitorAPIViewSet)
 
 
 urlpatterns = [

@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import CraftBeer
+from .models import CraftBeer, Visitor
 
 from django.forms.models import model_to_dict
 from django.forms.models import model_to_dict
@@ -31,6 +31,23 @@ class CraftBeerSerializer(serializers.ModelSerializer):
 
 
 
+class VisitorSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Visitor
+        # fields = '__all__'
+
+    def get_queryset(self):
+        """
+        This view should return a list of all the purchases
+        for the currently authenticated user.
+        """
+
+        dict = model_to_dict(Visitor)
+
+
+        user = self.request.user
+
+        return Visitor.objects.filter(purchaser=user)
 
 #
 # def json_response(something):

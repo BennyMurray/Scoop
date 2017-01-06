@@ -11,7 +11,7 @@
 
 
 
-    h1 id="province">Province</h1>
+    <h1 id="province">Province</h1>
 <div id="rsr"></div>
 
 
@@ -20,6 +20,11 @@
 <script src="{% static 'libraries/jquery-2.1.3.min.js.js' %}"></script>
 
 <script>
+
+leinster.transform("s0.50,0.50,0,0");
+munster.transform("s0.50,0.50,0,0");
+ulster.transform("s0.50,0.50,0,0");
+connaught.transform("s0.50,0.50,0,0");
 
 
 for (var i = 0; i < regions.length; i++){
@@ -34,6 +39,7 @@ regions[i].mouseover(function(e){
 regions[i].mouseout(function(e){
 
 	this.node.setAttribute('fill', '#b3ffb3');
+
 });
 
 }
