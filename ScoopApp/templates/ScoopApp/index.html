@@ -343,6 +343,12 @@
 			<!-- Hides main wrapper and displays search results -->
 			function searchResults(){
 
+
+
+
+
+
+
 				document.getElementById('wrapper').style.display = 'none';
 				document.getElementById('wrapper').style.opacity = '0';
 				document.getElementById('result_wrapper').style.display = 'inline-block';
@@ -468,18 +474,50 @@
 			}
 
 
-			var jsonHolder = [];
+
+
+
+                  $.getJSON('//freegeoip.net/json/?callback=?', function(user_ip) {
+              console.log(JSON.stringify(user_ip, null, 2));
+
+                    ip_info['user_ip'] = user_ip.ip;
+                    ip_info['user_region'] = user_ip.region_name;
+
+
+            });
+
+
+
+			var ip_info = {'user_ip':[],'user_region':[]};
+            var jsonHolder = [];
+
 
 			<!-- ON KEY PRESS (Enter): sends and receives JSON from server -->
 			$(document).keypress(function(e) {
 			if(e.which == 13) {
 
+
+
+
+
 {#			$.getJSON("http://scoop.pythonanywhere.com/api/Craftbeers/", {#}
             $.getJSON("/api/Craftbeers/", {
+
+
+
+
+
+
 				a:elem.value,
 				b:elem2.value,
 				c:elem3.value,
-				d:elem4.value
+				d:elem4.value,
+                e:ip_info['user_ip'],
+                f:ip_info['user_region']
+
+
+
+
 
 			}, function(data){
                     http://res.cloudinary.com/ratebeer/image/upload/w_120,c_limit/beer_365.jpg%22

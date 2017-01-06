@@ -15,7 +15,11 @@ def populate():
         ["13675", "Mint Beer", '4.5', '3', '42', '0','http://res.cloudinary.com/ratebeer/image/upload/w_120,c_limit/beer_365.jpg'],
         ["567", "Tea Beer", '4.5', '3', '42', '0','http://res.cloudinary.com/ratebeer/image/upload/w_120,c_limit/beer_365.jpg'],
         ["993675", "Lavendar Beer", '4.5', '3', '42', '0','http://res.cloudinary.com/ratebeer/image/upload/w_120,c_limit/beer_365.jpg'],
-        ["9967", "Heather Beer", '4.5', '3', '42', '0','http://res.cloudinary.com/ratebeer/image/upload/w_120,c_limit/beer_365.jpg'],
+        ["123967", "teather Beer", '4.5', '3', '42', '0','http://res.cloudinary.com/ratebeer/image/upload/w_120,c_limit/beer_365.jpg'],
+        ["99325", "Lfavendar Beer", '4.5', '3', '42', '0','http://res.cloudinary.com/ratebeer/image/upload/w_120,c_limit/beer_365.jpg'],
+        ["9961237", "He8sather Beer", '4.5', '3', '42', '0','http://res.cloudinary.com/ratebeer/image/upload/w_120,c_limit/beer_365.jpg'],
+        ["099325", "Lfa7vendar Beer", '4.5', '3', '42', '0','http://res.cloudinary.com/ratebeer/image/upload/w_120,c_limit/beer_365.jpg'],
+        ["0996137", "Hesj8ather Beer", '4.5', '3', '42', '0','http://res.cloudinary.com/ratebeer/image/upload/w_120,c_limit/beer_365.jpg'],
 
     ]
 

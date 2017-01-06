@@ -55,12 +55,16 @@ class TestViewSet(viewsets.ModelViewSet):
     queryset = CraftBeer.objects.all()
     serializer_class = CraftBeerSerializer
 
+
+
     # dict = model_to_dict(CraftBeer)
 
 
 
     def retrieve(self, request, *args, **kwargs):
         return Response({'something1': 'my custom JSON1'})
+
+
 
     def list(self, request, *args, **kwargs):
 
@@ -69,20 +73,26 @@ class TestViewSet(viewsets.ModelViewSet):
 
 
 
-
         #Convert model objects to dictionary
         new_dict = {}
-        for i in range(1, CraftBeer.objects.count()+1):
+
+
+        # for i in range(1, CraftBeer.objects.count()+1):
+        for i in range(1, 13):
             my_obj = CraftBeer.objects.get(sequence_added=i)
+            print >> sys.stderr, my_obj
+
+
             x = model_to_dict(my_obj,
                               fields=['beer_name', 'beerID', 'ABV', 'IBU', 'SRM', 'acidity', 'image_link'],
                               # fields to include
                               exclude=['sequence_added'],  # fields to exclude
                               )
             # print >> sys.stderr, x['beer_name']
+
             new_dict[x['beer_name']] = [x['ABV'], x['IBU'], x['SRM'], x['acidity'], x['image_link']]
 
-        print >> sys.stderr, len(new_dict)
+
 
 
 
@@ -98,15 +108,23 @@ class TestViewSet(viewsets.ModelViewSet):
         colour = request.GET.get('b', '')
         ibu = request.GET.get('c', '')
         acidity = request.GET.get('d', '')
+        ip_address = request.GET.get('e', '')
+        user_region = request.GET.get('f', '')
+
+
 
         user_input = [float(abv), float(colour), float(ibu), float(acidity)]
 
+        # Create Visitor Object with Search Parameters
+        visitor_number = Visitor.objects.count() + 1
+        add_Visitor(visitor_number, ip_address, user_region, str(user_input))
 
-        #Update Visitor Object with Search Parameters
-        ip_address = get_ip_address(request)
-        CraftBeer.objects.filter(name='ip_address').update(search_parameters=str(user_input))
-        print >> sys.stderr, "USER INPUT RECORDED"
 
+
+
+        # print >> '!!!!!!!', type(ip_address) is str
+        # Visitor.objects.get(ip_address='128').update(search_parameters='string')
+        # print >> sys.stderr, "USER INPUT RECORDED"
 
 
         user_input = [10,10,10,10]
