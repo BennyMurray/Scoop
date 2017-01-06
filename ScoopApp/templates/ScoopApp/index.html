@@ -100,30 +100,31 @@
             <h1 id="search_complete">Search Complete!</h1>
             <h3 id="simply_hover">Simply hover over a beer for more info</h3>
             <img id="symbols" src="{% static 'images/symbols.svg' %}">
-            <h3 class="value_titles">ABV%</h3>
-            <h3 class="value_titles">IBU</h3>
-            <h3 class="value_titles">SRM</h3>
-            <h3 class="value_titles">-</h3>
+            <h3 id="abv_title" class="value_titles">ABV%</h3>
+            <h3 id="srm_title" class="value_titles">SRM</h3>
+            <h3 id="ibu_title" class="value_titles">IBU</h3>
+
+            <h3 id="acidity_title" class="value_titles">-</h3>
 
         </div>
 
         <div id="right-side">
             <div id="results_top_row">
-                <div class="beer_container"><a id="beer1_link"><img id="beer1" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_1269.jpg" onmouseover="displayBeerDetails(1)"></a></div>
-                <div class="beer_container"><a id="beer2_link"><img id="beer2" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_365.jpg" onmouseover="displayBeerDetails(2)"></a></div>
-                <div class="beer_container"><a id="beer3_link"><img id="beer3" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_70770.jpg" onmouseover="displayBeerDetails(3)"></a></div>
-                <div class="beer_container"><a id="beer4_link"><img id="beer4" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_173659.jpg" onmouseover="displayBeerDetails(4)"></a></div>
-                <div class="beer_container"><a id="beer5_link"><img id="beer5" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_6925.jpg" onmouseover="displayBeerDetails(5)"></a></div>
-                <div class="beer_container"><a id="beer6_link"><img id="beer6" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_9183.jpg" onmouseover="displayBeerDetails(6)"></a></div>
+                <div class="beer_container"><a id="beer1_link"><img id="beer1" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_1269.jpg" onmouseover="displayBeerDetails('beer1')"></a></div>
+                <div class="beer_container"><a id="beer2_link"><img id="beer2" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_365.jpg" onmouseover="displayBeerDetails('beer2')"></a></div>
+                <div class="beer_container"><a id="beer3_link"><img id="beer3" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_70770.jpg" onmouseover="displayBeerDetails('beer3')"></a></div>
+                <div class="beer_container"><a id="beer4_link"><img id="beer4" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_173659.jpg" onmouseover="displayBeerDetails('beer4')"></a></div>
+                <div class="beer_container"><a id="beer5_link"><img id="beer5" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_6925.jpg" onmouseover="displayBeerDetails('beer5')"></a></div>
+                <div class="beer_container"><a id="beer6_link"><img id="beer6" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_9183.jpg" onmouseover="displayBeerDetails('beer6')"></a></div>
             </div>
 
             <div id="results_bottom_row">
-                <div class="beer_container"><a id="beer7_link"><img id="beer7" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_1269.jpg"></a></div>
-                <div class="beer_container"><a id="beer8_link"><img id="beer8" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_365.jpg"></a></div>
-                <div class="beer_container"><a id="beer9_link"><img id="beer9" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_365.jpg"></a></div>
-                <div class="beer_container"><a id="beer10_link"><img id="beer10" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_173659.jpg"></a></div>
-                <div class="beer_container"><a id="beer11_link"><img id="beer11" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_6925.jpg"></a></div>
-                <div class="beer_container"><a id="beer12_link"><img id="beer12" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_9183.jpg"></a></div>
+                <div class="beer_container"><a id="beer7_link"><img id="beer7" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_1269.jpg" onmouseover="displayBeerDetails('beer7')"></a></div>
+                <div class="beer_container"><a id="beer8_link"><img id="beer8" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_365.jpg" onmouseover="displayBeerDetails('beer8')"></a></div>
+                <div class="beer_container"><a id="beer9_link"><img id="beer9" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_365.jpg" onmouseover="displayBeerDetails('beer9')"></a></div>
+                <div class="beer_container"><a id="beer10_link"><img id="beer10" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_173659.jpg" onmouseover="displayBeerDetails('beer10')"></a></div>
+                <div class="beer_container"><a id="beer11_link"><img id="beer11" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_6925.jpg" onmouseover="displayBeerDetails('beer11')"></a></div>
+                <div class="beer_container"><a id="beer12_link"><img id="beer12" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_9183.jpg" onmouseover="displayBeerDetails('beer12')"></a></div>
             </div>
 	    </div>
     </div>
@@ -142,7 +143,7 @@
 		<script type="text/javascript">
 
 
-		<!-- PRELOADER (ADJUSTED FROM W3 SCHOOLS) -->
+{#		<!-- PRELOADER (ADJUSTED FROM W3 SCHOOLS) -->#}
 		jQuery(window).load(function() {
 		jQuery("#preloader").delay(800).fadeOut(650, "swing");
 
@@ -406,40 +407,51 @@
 
 			function displayBeerDetails(position){
 
-                switch(position)
-            {
-                case 1:
-
-                    document.getElementById('search_complete').innerHTML = jsonHolder[0];
-                    break;
-
-                case 2:
-                    document.getElementById('search_complete').innerHTML = jsonHolder[1];
-                    break;
-
-                case 3:
-                    document.getElementById('search_complete').innerHTML = jsonHolder[2];
-                    break;
-
-                case 4:
-                    document.getElementById('search_complete').innerHTML = jsonHolder[3];
-                    break;
-
-                case 5:
-                    document.getElementById('search_complete').innerHTML = jsonHolder[4];
-                    break;
-
-                case 6:
-                    document.getElementById('search_complete').innerHTML = jsonHolder[5];
-                    break;
-
-                default:
-                    break;
+                document.getElementById('search_complete').innerHTML = jsonHolder[position][0];
+                document.getElementById('abv_title').innerHTML = jsonHolder[position][1];
+                document.getElementById('ibu_title').innerHTML = jsonHolder[position][2];
+                document.getElementById('acidity_title').innerHTML = jsonHolder[position][3];
 
 
             }
 
-            }
+
+{#			function displayBeerDetails(position){#}
+{##}
+{#                switch(position)#}
+{#            {#}
+{#                case 1:#}
+{##}
+{#                    document.getElementById('search_complete').innerHTML = jsonHolder[0];#}
+{#                    break;#}
+{##}
+{#                case 2:#}
+{#                    document.getElementById('search_complete').innerHTML = jsonHolder[1];#}
+{#                    break;#}
+{##}
+{#                case 3:#}
+{#                    document.getElementById('search_complete').innerHTML = jsonHolder[2];#}
+{#                    break;#}
+{##}
+{#                case 4:#}
+{#                    document.getElementById('search_complete').innerHTML = jsonHolder[3];#}
+{#                    break;#}
+{##}
+{#                case 5:#}
+{#                    document.getElementById('search_complete').innerHTML = jsonHolder[4];#}
+{#                    break;#}
+{##}
+{#                case 6:#}
+{#                    document.getElementById('search_complete').innerHTML = jsonHolder[5];#}
+{#                    break;#}
+{##}
+{#                default:#}
+{#                    break;#}
+{##}
+{##}
+{#            }#}
+{##}
+{#            }#}
 
 
 			<!-- Sets value of a slider -->
@@ -489,7 +501,23 @@
 
 
 			var ip_info = {'user_ip':[],'user_region':[]};
-            var jsonHolder = [];
+
+            var jsonHolder = {
+
+                'beer1': ['name', 'ABV', 'SRM', 'ACIDITY'],
+                'beer2': ['name', 'ABV', 'SRM', 'ACIDITY'],
+                'beer3': ['name', 'ABV', 'SRM', 'ACIDITY'],
+                'beer4': ['name', 'ABV', 'SRM', 'ACIDITY'],
+                'beer5': ['name', 'ABV', 'SRM', 'ACIDITY'],
+                'beer6': ['name', 'ABV', 'SRM', 'ACIDITY'],
+                'beer7': ['name', 'ABV', 'SRM', 'ACIDITY'],
+                'beer8': ['name', 'ABV', 'SRM', 'ACIDITY'],
+                'beer9': ['name', 'ABV', 'SRM', 'ACIDITY'],
+                'beer10': ['name', 'ABV', 'SRM', 'ACIDITY'],
+                'beer11': ['name', 'ABV', 'SRM', 'ACIDITY'],
+                'beer12': ['name', 'ABV', 'SRM', 'ACIDITY'],
+
+            };
 
 
 			<!-- ON KEY PRESS (Enter): sends and receives JSON from server -->
@@ -529,13 +557,26 @@
 					document.getElementById("beer5").src=JSON.parse(JSON.stringify(data.fifth['image_link']))
 					document.getElementById("beer6").src=JSON.parse(JSON.stringify(data.sixth['image_link']))
 
+                    jsonHolder['beer1'] = [JSON.parse(JSON.stringify(data.first['name'])), JSON.parse(JSON.stringify(data.first['ABV'])), JSON.parse(JSON.stringify(data.first['IBU'])), JSON.parse(JSON.stringify(data.first['SRM'])), JSON.parse(JSON.stringify(data.first['acidity']))];
+                    jsonHolder['beer2'] = [JSON.parse(JSON.stringify(data.second['name'])), JSON.parse(JSON.stringify(data.first['ABV'])), JSON.parse(JSON.stringify(data.first['IBU'])), JSON.parse(JSON.stringify(data.first['SRM'])), JSON.parse(JSON.stringify(data.first['acidity']))];
+                    jsonHolder['beer3'] = [JSON.parse(JSON.stringify(data.third['name'])), JSON.parse(JSON.stringify(data.first['ABV'])), JSON.parse(JSON.stringify(data.first['IBU'])), JSON.parse(JSON.stringify(data.first['SRM'])), JSON.parse(JSON.stringify(data.first['acidity']))];
+                    jsonHolder['beer4'] = [JSON.parse(JSON.stringify(data.fourth['name'])), JSON.parse(JSON.stringify(data.first['ABV'])), JSON.parse(JSON.stringify(data.first['IBU'])), JSON.parse(JSON.stringify(data.first['SRM'])), JSON.parse(JSON.stringify(data.first['acidity']))];
+                    jsonHolder['beer5'] = [JSON.parse(JSON.stringify(data.fifth['name'])), JSON.parse(JSON.stringify(data.first['ABV'])), JSON.parse(JSON.stringify(data.first['IBU'])), JSON.parse(JSON.stringify(data.first['SRM'])), JSON.parse(JSON.stringify(data.first['acidity']))];
+                    jsonHolder['beer6'] = [JSON.parse(JSON.stringify(data.sixth['name'])), JSON.parse(JSON.stringify(data.first['ABV'])), JSON.parse(JSON.stringify(data.first['IBU'])), JSON.parse(JSON.stringify(data.first['SRM'])), JSON.parse(JSON.stringify(data.first['acidity']))];
 
-                    jsonHolder.push(JSON.parse(JSON.stringify(data.first['name'])));
-                    jsonHolder.push(JSON.parse(JSON.stringify(data.second['name'])));
-                    jsonHolder.push(JSON.parse(JSON.stringify(data.third['name'])));
-                    jsonHolder.push(JSON.parse(JSON.stringify(data.fourth['name'])));
-                    jsonHolder.push(JSON.parse(JSON.stringify(data.fifth['name'])));
-                    jsonHolder.push(JSON.parse(JSON.stringify(data.sixth['name'])));
+                    jsonHolder['beer7'] = [JSON.parse(JSON.stringify(data.seventh['name'])), JSON.parse(JSON.stringify(data.first['ABV'])), JSON.parse(JSON.stringify(data.first['IBU'])), JSON.parse(JSON.stringify(data.first['SRM'])), JSON.parse(JSON.stringify(data.first['acidity']))];
+                    jsonHolder['beer8'] = [JSON.parse(JSON.stringify(data.eighth['name'])), JSON.parse(JSON.stringify(data.first['ABV'])), JSON.parse(JSON.stringify(data.first['IBU'])), JSON.parse(JSON.stringify(data.first['SRM'])), JSON.parse(JSON.stringify(data.first['acidity']))];
+                    jsonHolder['beer9'] = [JSON.parse(JSON.stringify(data.ninth['name'])), JSON.parse(JSON.stringify(data.first['ABV'])), JSON.parse(JSON.stringify(data.first['IBU'])), JSON.parse(JSON.stringify(data.first['SRM'])), JSON.parse(JSON.stringify(data.first['acidity']))];
+                    jsonHolder['beer10'] = [JSON.parse(JSON.stringify(data.tenth['name'])), JSON.parse(JSON.stringify(data.first['ABV'])), JSON.parse(JSON.stringify(data.first['IBU'])), JSON.parse(JSON.stringify(data.first['SRM'])), JSON.parse(JSON.stringify(data.first['acidity']))];
+                    jsonHolder['beer11'] = [JSON.parse(JSON.stringify(data.eleventh['name'])), JSON.parse(JSON.stringify(data.first['ABV'])), JSON.parse(JSON.stringify(data.first['IBU'])), JSON.parse(JSON.stringify(data.first['SRM'])), JSON.parse(JSON.stringify(data.first['acidity']))];
+                    jsonHolder['beer12'] = [JSON.parse(JSON.stringify(data.twelfth['name'])), JSON.parse(JSON.stringify(data.first['ABV'])), JSON.parse(JSON.stringify(data.first['IBU'])), JSON.parse(JSON.stringify(data.first['SRM'])), JSON.parse(JSON.stringify(data.first['acidity']))];
+
+{#                    jsonHolder.push(JSON.parse(JSON.stringify(data.first['name'])));#}
+{#                    jsonHolder.push(JSON.parse(JSON.stringify(data.second['name'])));#}
+{#                    jsonHolder.push(JSON.parse(JSON.stringify(data.third['name'])));#}
+{#                    jsonHolder.push(JSON.parse(JSON.stringify(data.fourth['name'])));#}
+{#                    jsonHolder.push(JSON.parse(JSON.stringify(data.fifth['name'])));#}
+{#                    jsonHolder.push(JSON.parse(JSON.stringify(data.sixth['name'])));#}
 
 {##}
 {#					document.getElementById("beer1_link").href="http://www.ratebeer.com/beer/"+data.result[0].first[2]+"/";#}

@@ -112,12 +112,34 @@ h3{
 }
 
 
+#symbols{
+	margin-top: 1.5%;
+}
+
 .value_titles{
 	font-size: 1.3vw;
 	display: inline-block;
-	margin-right: 3%;
+	margin-right: 5%;
+	position: relative;
+	right: 11.9%;
 }
 
+
+#abv_title{
+
+}
+
+#ibu_title{
+	right: 0%;
+}
+
+#srm_title{
+	right: 6%;
+}
+
+#acidity_title{
+	left: 15.4%;
+}
 
 
 
