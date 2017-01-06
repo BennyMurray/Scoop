@@ -37,6 +37,7 @@ def compileBeerList():
 
         value_list = getValues(word_list, beer_dict[beerName][0], beerName)
         beer_data_list.append([beerName, beer_dict[beerName][1], value_list[0], value_list[1], value_list[2], value_list[3], image_link])
+
         counter += 1
 
         print (counter/len(beer_dict) * 100),"% complete"

@@ -13,7 +13,7 @@ def scrapeBeers():
     page_number = 1
 
     beer_dict = {}
-    for i in range(10):
+    for i in range(17):
 
         counter = 0
         page = br.open("http://www.drinkstore.ie/WORLD-%26-CRAFT-BEER/?page=" + str(page_number))
@@ -46,7 +46,7 @@ def scrapeBeers():
     for beername in beer_dict:
         beerID = browsersearch(beername)
         if beer_dict[beername][1] is None:
-            beer_dict[beername][1] = "ID NOT FOUND"
+            beer_dict[beername][1] = "ID NOT FOUND for " + beername
 
         else:
             beer_dict[beername][1] = beerID

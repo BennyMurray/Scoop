@@ -4,7 +4,7 @@ from Textcleaner import cleanText
 import urllib2
 
 #number of pages to scrape
-numOfPages = 1
+numOfPages = 10
 
 br = Browser()
 

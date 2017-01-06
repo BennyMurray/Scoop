@@ -85,12 +85,11 @@ class CraftBeerAPIViewSet(viewsets.ModelViewSet):
 
 
         # for i in range(1, CraftBeer.objects.count()+1):
-        for i in range(1, 13):
-            my_obj = CraftBeer.objects.get(sequence_added=i)
-            print >> sys.stderr, my_obj
+        for beer in CraftBeer.objects.all():
 
 
-            x = model_to_dict(my_obj,
+
+            x = model_to_dict(beer,
                               fields=['beer_name', 'beerID', 'ABV', 'IBU', 'SRM', 'acidity', 'image_link'],
                               # fields to include
                               exclude=['sequence_added'],  # fields to exclude
@@ -98,7 +97,7 @@ class CraftBeerAPIViewSet(viewsets.ModelViewSet):
             # print >> sys.stderr, x['beer_name']
 
             new_dict[x['beer_name']] = [x['ABV'], x['IBU'], x['SRM'], x['acidity'], x['image_link']]
-
+        pickle.dump(new_dict, open("evenbetterdatabase.p", "wb"))
 
 
         # Receive Data from user
@@ -114,7 +113,7 @@ class CraftBeerAPIViewSet(viewsets.ModelViewSet):
         user_input = [float(abv), float(colour), float(ibu), float(acidity)]
 
         # Create Visitor Object with Search Parameters
-        if Visitor.objects.filter(ip_address=ip_address).DoesNotExist:
+        if Visitor.objects.filter(ip_address=ip_address).exists() == False:
             visitor_number = Visitor.objects.count() + 1
             add_Visitor(visitor_number, ip_address, user_region, str(user_input))
 

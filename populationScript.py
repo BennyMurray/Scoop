@@ -1,6 +1,6 @@
 import os
 from mainThread import compileBeerList
-
+import pickle
 
 #get_or_create method checks if entry exists and, if not, creates it. 
 
@@ -15,11 +15,13 @@ def populate():
     email = "user@scoop.com"
     password = "password!!"
 
+    pickle.dump(beerList, open("sampleDB.p", "wb"))
 
     counter = 1
     for list in beerList:
-
-        add_Beer("5", list[0],list[2],list[3], list[4],list[5], list[6], counter)
+        if list[1] == None:
+            list[1] = list[0] + "needs to be assigned a unique ID"
+        add_Beer(list[1], list[0],list[2],list[3], list[4],list[5], list[6], counter)
         counter += 1
 
 
