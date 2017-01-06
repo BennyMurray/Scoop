@@ -99,9 +99,18 @@ class TestViewSet(viewsets.ModelViewSet):
         ibu = request.GET.get('c', '')
         acidity = request.GET.get('d', '')
 
-        #user_input = [float(abv), float(colour), float(ibu), float(acidity)]
+        user_input = [float(abv), float(colour), float(ibu), float(acidity)]
+
+
+        #Update Visitor Object with Search Parameters
+        ip_address = get_ip_address(request)
+        CraftBeer.objects.filter(name='ip_address').update(search_parameters=str(user_input))
+        print >> sys.stderr, "USER INPUT RECORDED"
+
+
+
         user_input = [10,10,10,10]
-        print >> sys.stderr, "this is the callback", user_input
+
 
         #Run user's data through beer-finding algorithm and return the results as JSON
         json_for_export = find_beer(user_input, new_dict)
