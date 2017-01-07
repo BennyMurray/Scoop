@@ -60,6 +60,14 @@ def scrapeReviews(beername, beerID):
     return cleanText(stringDump)
 
 import pickle
-wordlist = scrapeReviews('sierra nevada pale ale', '370')
+acid0 = scrapeReviews('sierra nevada pale ale', '370')
+acid3 = scrapeReviews('sierra nevada pale ale', '344')
+acid6 = scrapeReviews('sierra nevada pale ale', '70647')
+acid7 = scrapeReviews('sierra nevada pale ale', '1194')
+acid10 = scrapeReviews('sierra nevada pale ale', '6925')
 
-pickle.dump(wordlist, open("srm8beer.p", "wb"))
+pickle.dump(acid0, open("0acidbeer.p", "wb"))
+pickle.dump(acid3, open("3acidbeer.p", "wb"))
+pickle.dump(acid6, open("6acidbeer.p", "wb"))
+pickle.dump(acid7, open("7acidbeer.p", "wb"))
+pickle.dump(acid10, open("10acidbeer.p", "wb"))
