@@ -4,7 +4,7 @@ import pickle
 
 
 def populate():
-    sample_database = pickle.load(open("evenbetterdatabase.p", "rb"))
+    sample_database = pickle.load(open("sample_database.p", "rb"))
     print sample_database
     for beer_name in sample_database:
         print beer_name[0]

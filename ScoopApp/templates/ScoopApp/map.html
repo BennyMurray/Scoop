@@ -10,42 +10,50 @@
 {% block content %}
 
 
-
-    <h1 id="province">Province</h1>
 <div id="rsr"></div>
 
 
-<script src="{% static 'libraries/raphael.min.js' %}"></script>
-<script src="{% static 'libraries/ireland.js' %}"></script>
-<script src="{% static 'libraries/jquery-2.1.3.min.js.js' %}"></script>
+<div id="map_right_side">
+    <div id="info_div">
+    <h2 id="Whats_everybody_title">What's Everyone Drinking?</h2>
+        <h3 id="hover_over">Hover over the map to find out!</h3>
+    </div>
+</div>
+
+<script src="{% static 'libraries/../../static/map/raphael.min.js' %}"></script>
+<script src="{% static 'map/map.js' %}"></script>
+<script src="{% static 'libraries/../../static/map/jquery-2.1.3.min.js' %}"></script>
+
+
 
 <script>
 
-leinster.transform("s0.50,0.50,0,0");
-munster.transform("s0.50,0.50,0,0");
-ulster.transform("s0.50,0.50,0,0");
-connaught.transform("s0.50,0.50,0,0");
+leinster.transform("s0.75,0.75,0,0");
+munster.transform("s0.75,0.75,0,0");
+ulster.transform("s0.75,0.75,0,0");
+connaught.transform("s0.75,0.75,0,0");
 
 
-for (var i = 0; i < regions.length; i++){
+// Iterate through the regions & change Yorkshire’s fill colour to gold
+for (var i = 0; i < regions.length; i++) {
 
-regions[i].mouseover(function(e){
-	this.node.setAttribute('fill', '#66ccff');
-	document.getElementById('province').innerHTML = this.data('id');
-	document.getElementById("divtoshow").style.opacity = '1';
 
-});
 
-regions[i].mouseout(function(e){
+    // Showing off
+    regions[i].mouseover(function(e){
+         document.getElementById('Whats_everybody_title').style.top = '0%';
+        document.getElementById('hover_over').style.top = '0%';
 
-	this.node.setAttribute('fill', '#b3ffb3');
+        this.node.style.opacity = 0.7;
+        document.getElementById('region-name').innerHTML = this.data('region');
+    });
 
-});
-
+    regions[i].mouseout(function(e){
+         document.getElementById('Whats_everybody_title').style.top = '30%';
+        document.getElementById('hover_over').style.top = '30%';
+        this.node.style.opacity = 1;
+    });
 }
-
-
-
 
 </script>
 

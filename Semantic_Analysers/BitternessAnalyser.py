@@ -1,39 +1,20 @@
 from __future__ import division
-import random
-import pickle
-
-
-
-def TrainBitterness():
-
-    ibu10 = pickle.load(open("10ibubeer.p", "rb"))
-    ibu32 = pickle.load(open("32ibubeer.p", "rb"))
-    ibu42 = pickle.load(open("42ibubeer.p", "rb"))
-    ibu60 = pickle.load(open("60ibubeer.p", "rb"))
-    ibu80 = pickle.load(open("80ibubeer.p", "rb"))
-
-    while True:
-        number_set = [round(random.uniform(0.1, 15), 2) for x in range(77)]
-
-
-        return_value_10 = analyseBitterness(ibu10, number_set)
-        return_value_32 = analyseBitterness(ibu32, number_set)
-        return_value_42 = analyseBitterness(ibu42, number_set)
-        return_value_60 = analyseBitterness(ibu60, number_set)
-        return_value_80 = analyseBitterness(ibu80, number_set)
-
-
-        if abs(return_value_10 - 10) < 4 and abs(return_value_32 - 34) < 4 and abs(return_value_42 - 42) < 4 and abs(return_value_60 - 60) < 4 and abs(return_value_80 - 40) < 4:
-
-            print "!!!!!!!!!!!", number_set
-            break
-        else:
-            print return_value_10, return_value_32, return_value_42, return_value_60, return_value_80
 
 
 
 
-def analyseBitterness(word_list, number_set):
+
+
+def analyseBitterness(word_list):
+
+
+
+
+    number_set = [2.22, 5.17, 4.13, 6.41, 2.46, 5.51, 7.81, 8.11, 0.94, 4.44, 6.83, 9.58, 6.5, 6.51, 8.52, 3.11, 4.8,
+                  4.0, 0.53, 5.73, 7.26, 0.69, 2.85, 0.3, 5.72, 3.0, 6.87, 4.17, 8.43, 4.62, 1.18, 4.01, 9.08, 9.29,
+                  3.93, 6.88, 1.94, 4.59, 9.71, 1.2, 7.01, 3.36, 5.06, 3.22, 6.25, 6.53, 0.53, 2.35, 5.46, 3.13, 9.88,
+                  0.72, 1.73, 8.59, 6.31, 1.95, 2.69, 2.63, 1.53, 7.14, 7.48, 5.59, 4.23, 1.63, 1.8, 8.48, 5.35, 8.98,
+                  4.91, 5.57, 7.0, 8.34, 8.19, 1.49, 6.77, 7.0, 9.9]
 
     bitterness_synonyms_list = ["hoppy", "hop", "hops", "well-hopped", "hopped", "bitter", "bitterness", "piney",
                                 "tropical", "earthy", "cascade", "citra", "grassy", "lemon", "resin", "grassy",
@@ -113,8 +94,3 @@ def analyseBitterness(word_list, number_set):
                 return bitterness
         except ZeroDivisionError:
             return 100
-
-
-
-
-TrainBitterness()

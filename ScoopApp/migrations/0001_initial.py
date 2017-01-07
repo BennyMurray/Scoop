@@ -20,7 +20,7 @@ class Migration(migrations.Migration):
                 ('SRM', models.IntegerField(default='4')),
                 ('IBU', models.FloatField(default='25')),
                 ('acidity', models.IntegerField(default='0')),
-                ('image_link', models.CharField(default='http://1.bp.blogspot.com/-lR_pck9k_t8/VFxRlkfDr4I/AAAAAAAAAOI/pw249IysvYo/s1600/How%2Bto%2Breload%2Bimage%2Bin%2Bchrome.png', max_length=300)),
+                ('image_link', models.CharField(default='http://media.istockphoto.com/photos/beer-bottle-picture-id175533358?k=6&m=175533358&s=170667a&w=0&h=de2hI2j7Ie8LiNCvkRlS-wwxhChsggEDoX9SDagZnAY=', max_length=300)),
                 ('sequence_added', models.IntegerField(default=0)),
             ],
         ),

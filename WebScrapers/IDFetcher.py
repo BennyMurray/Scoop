@@ -2,8 +2,9 @@ import mechanize
 from bs4 import BeautifulSoup
 import re
 
-
-def browsersearch(searchterm):
+#Fetches Beer IDs from Ratebeer (used for images)
+#------------------------------------------------#
+def IDFetcher(searchterm):
     br = mechanize.Browser()
     br.set_handle_robots(False)
     br.set_handle_equiv(False)

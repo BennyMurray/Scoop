@@ -47,3 +47,50 @@ body{
 	background-color: rgba(0,0,0,0.2);
 	transition: 0.2s;
 }
+
+/*MAP*/
+#rsr{
+
+	position: relative;
+	left: 7%;
+	top: 9%;
+
+	height: 50%;
+	width: 50%;
+	float: left;
+	border: solid 1px transparent;
+}
+
+#map_right_side{
+
+	height: 70%;
+	width: 50%;
+	bottom: 40%;
+	right: 5%;
+	position: relative;
+	float: right;
+
+}
+
+
+#Whats_everybody_title{
+	transition: 0.5s;
+	top: 30%;
+	font-size: 2.6vw;
+	position: relative;
+
+}
+
+#info_div{
+	text-align: center;
+	border: solid 1px black;
+	height: 100%;
+}
+
+#hover_over{
+	transition: 0.5s;
+	top: 30%;
+	position: relative;
+	font-weight: 300;
+	margin-top: 2%;
+}

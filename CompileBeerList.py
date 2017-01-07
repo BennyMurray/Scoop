@@ -1,16 +1,13 @@
 from __future__ import division
 
-from Beerscraper import scrapeBeers
-from reviewScraper import scrapeReviews
-from SemanticAnalyser import getValues
-import pickle
-import time
+from Semantic_Analysers.SemanticAnalyser import getValues
+from WebScrapers.Beerscraper import scrapeBeers
+from WebScrapers.reviewScraper import scrapeReviews
 
-
+#COMPILES A LIST OF BEER OBJECTS TO BE USED IN DATABASE
+#-----------------------------------------------------#
 def compileBeerList():
 
-
-    start = time.time()
 
     counter = 0
 
@@ -42,9 +39,8 @@ def compileBeerList():
 
         print (counter/len(beer_dict) * 100),"% complete"
 
-    end = time.time()
-    print end - start
-    pickle.dump(beer_data_list, open("beerData.p", "wb"))
+
+
     return beer_data_list
 
 

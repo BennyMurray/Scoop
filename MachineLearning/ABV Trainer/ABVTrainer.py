@@ -1,11 +1,31 @@
 from __future__ import division
-
+import pickle
+import random
 
 def trainABV():
 
+    abv_3_8 = pickle.load(open("3_8abv.p", "rb"))
+    abv_5_6 = pickle.load(open("5_6abv.p", "rb"))
+    abv_8_5 = pickle.load(open("8_5abv.p", "rb"))
+    abv_10_5 = pickle.load(open("10_5abv.p", "rb"))
+    abv_7_4 = pickle.load(open("7_4abv.p", "rb"))
+
 
     while True:
-        number_set = [round(random.uniform(0.1, 15), 2) for x in range(35)]
+        number_set = [round(random.uniform(0.1, 3), 2) for x in range(35)]
+
+        result_a = abs(analyseStrength(abv_3_8, 3.8, number_set) - 3.8)
+        result_b = abs(analyseStrength(abv_5_6, 5.6, number_set) - 5.6)
+        result_c = abs(analyseStrength(abv_8_5, 8.5, number_set) - 7)
+        result_d =abs(analyseStrength(abv_10_5, 10.5, number_set) - 11.5)
+        result_e = abs(analyseStrength(abv_7_4, 7.4, number_set) - 9)
+        
+        if result_a < 1.5 and result_b < 1.5 and result_c < 1.5 and result_d < 1.5 and result_e < 1.5:
+            print 'Determined Accurate Number Set: ', number_set
+            break
+        else:
+            print result_a, result_b, result_c , result_d, result_e
+
 
 def analyseStrength(word_list, published_abv, num_set):
 
@@ -45,3 +65,4 @@ def analyseStrength(word_list, published_abv, num_set):
 
 
 
+trainABV()

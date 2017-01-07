@@ -2,7 +2,7 @@
 from nltk.tokenize import word_tokenize
 
 #Import custom stopwords from file
-stopwords_file = open('stopwords.txt', 'r')
+stopwords_file = open('WebScrapers/stopwords.txt', 'r')
 stopwords = [x for x in stopwords_file.read().split()]
 
 def cleanText(text):

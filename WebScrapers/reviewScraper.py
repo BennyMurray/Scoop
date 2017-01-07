@@ -1,10 +1,10 @@
-from mechanize import Browser
-from bs4 import BeautifulSoup as BS
-from Textcleaner import cleanText
 import urllib2
+from bs4 import BeautifulSoup as BS
+from mechanize import Browser
+from WebScrapers.Textcleaner import cleanText
 
 #number of pages to scrape
-numOfPages = 20
+numOfPages = 15
 
 br = Browser()
 
@@ -59,15 +59,3 @@ def scrapeReviews(beername, beerID):
 
     return cleanText(stringDump)
 
-import pickle
-acid0 = scrapeReviews('sierra nevada pale ale', '370')
-acid3 = scrapeReviews('sierra nevada pale ale', '344')
-acid6 = scrapeReviews('sierra nevada pale ale', '70647')
-acid7 = scrapeReviews('sierra nevada pale ale', '1194')
-acid10 = scrapeReviews('sierra nevada pale ale', '6925')
-
-pickle.dump(acid0, open("0acidbeer.p", "wb"))
-pickle.dump(acid3, open("3acidbeer.p", "wb"))
-pickle.dump(acid6, open("6acidbeer.p", "wb"))
-pickle.dump(acid7, open("7acidbeer.p", "wb"))
-pickle.dump(acid10, open("10acidbeer.p", "wb"))

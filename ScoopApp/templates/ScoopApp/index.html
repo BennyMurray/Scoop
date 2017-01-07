@@ -134,10 +134,10 @@
 	<!-- -------------SCRIPTS------------------ -->
 
 	<!-- JQuery (required by below libraries) -->
-		<script src="{% static 'libraries/jquery-2.1.3.min.js' %}"></script>
+		<script src="{% static 'libraries/../../static/map/jquery-2.1.3.min.js' %}"></script>
 
 	<!-- Powerrange.js (allows customization of slider form (for volume slider) -->
-		<script src="{% static 'libraries/powerange.js' %}"></script>
+		<script src="{% static 'libraries/../../static/map/../../static/libraries/powerange.js' %}"></script>
 
 	<!--Main Script	-->
 		<script type="text/javascript">
@@ -551,12 +551,20 @@
 			}, function(data){
                     http://res.cloudinary.com/ratebeer/image/upload/w_120,c_limit/beer_365.jpg%22
 
-					document.getElementById("beer1").src=JSON.parse(JSON.stringify(data.first['image_link']))
-					document.getElementById("beer2").src=JSON.parse(JSON.stringify(data.second['image_link']))
-					document.getElementById("beer3").src=JSON.parse(JSON.stringify(data.third['image_link']))
-					document.getElementById("beer4").src=JSON.parse(JSON.stringify(data.fourth['image_link']))
-					document.getElementById("beer5").src=JSON.parse(JSON.stringify(data.fifth['image_link']))
-					document.getElementById("beer6").src=JSON.parse(JSON.stringify(data.sixth['image_link']))
+					document.getElementById("beer1").src=JSON.parse(JSON.stringify(data.first['image_link']));
+					document.getElementById("beer2").src=JSON.parse(JSON.stringify(data.second['image_link']));
+					document.getElementById("beer3").src=JSON.parse(JSON.stringify(data.third['image_link']));
+					document.getElementById("beer4").src=JSON.parse(JSON.stringify(data.fourth['image_link']));
+					document.getElementById("beer5").src=JSON.parse(JSON.stringify(data.fifth['image_link']));
+					document.getElementById("beer6").src=JSON.parse(JSON.stringify(data.sixth['image_link']));
+
+
+                    document.getElementById("beer7").src=JSON.parse(JSON.stringify(data.seventh['image_link']));
+					document.getElementById("beer8").src=JSON.parse(JSON.stringify(data.eighth['image_link']));
+					document.getElementById("beer9").src=JSON.parse(JSON.stringify(data.ninth['image_link']));
+					document.getElementById("beer10").src=JSON.parse(JSON.stringify(data.tenth['image_link']));
+					document.getElementById("beer11").src=JSON.parse(JSON.stringify(data.eleventh['image_link']));
+					document.getElementById("beer12").src=JSON.parse(JSON.stringify(data.twelfth['image_link']));
 
                     jsonHolder['beer1'] = [JSON.parse(JSON.stringify(data.first['name'])), JSON.parse(JSON.stringify(data.first['ABV'])), JSON.parse(JSON.stringify(data.first['IBU'])), JSON.parse(JSON.stringify(data.first['SRM'])), JSON.parse(JSON.stringify(data.first['acidity']))];
                     jsonHolder['beer2'] = [JSON.parse(JSON.stringify(data.second['name'])), JSON.parse(JSON.stringify(data.second['ABV'])), JSON.parse(JSON.stringify(data.second['IBU'])), JSON.parse(JSON.stringify(data.second['SRM'])), JSON.parse(JSON.stringify(data.second['acidity']))];

@@ -1,36 +1,36 @@
 import os
-from mainThread import compileBeerList
-import pickle
+from CompileBeerList import compileBeerList
 
-#get_or_create method checks if entry exists and, if not, creates it. 
+
+#POPULATE DATABASE WITH BEER OBJECTS
+#-----------------------------------#
+
 
 def populate():
 
-    beerList = compileBeerList()
+    #Scrape beers form the internet and analyses reviews to generate values for strength, bitterness, colour and acidity .
+    beer_List = compileBeerList()
 
     print ('populating Database...')
     print ('______________________\n')
 
+    #Creates a superuser to access the MVC admin
     username = "user"
     email = "user@scoop.com"
     password = "password!!"
 
-    pickle.dump(beerList, open("sampleDB.p", "wb"))
-
+    #Creates a data base object if it does not exist
     counter = 1
-    for list in beerList:
+    for list in beer_List:
         if list[1] == None:
-            list[1] = list[0] + "needs to be assigned a unique ID"
+            list[1] = list[0] + "Not Found: " + str(counter)
         add_Beer(list[1], list[0],list[2],list[3], list[4],list[5], list[6], counter)
         counter += 1
 
 
 
-    
-
-    #create_super_user(username, email, password)
-
-
+#ADD BEER FUNCTION
+#----------------#
 
 def add_Beer(beerID, beer_name, ABV, SRM, IBU, acidity, image_link, sequence_added):
     b, created = CraftBeer.objects.get_or_create(beerID=beerID, beer_name=beer_name, ABV=ABV, SRM=SRM, IBU=IBU, acidity=acidity, image_link=image_link, sequence_added=sequence_added)
@@ -39,6 +39,8 @@ def add_Beer(beerID, beer_name, ABV, SRM, IBU, acidity, image_link, sequence_add
 
 	
 
+#CREATE SUPER USER FUNCTION
+#-------------------------#
 
 def create_super_user(username, email, password):
     '''
@@ -52,6 +54,9 @@ def create_super_user(username, email, password):
     except IntegrityError:
         pass
 
+
+#ALLOWS USE OF MVC MODELS EXTERNALLY
+#-----------------------------------#
 
 if __name__ == '__main__':
     print '\n' + ('=' * 80) + '\n'

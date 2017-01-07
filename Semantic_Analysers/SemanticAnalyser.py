@@ -1,7 +1,8 @@
 from AcidityAnalyser import analyseAcidity
-from StrengthAnalyser import analyseStrength
 from BitternessAnalyser import analyseBitterness
 from ColourAnalyser import analyseColour
+from StrengthAnalyser import analyseStrength
+
 
 def getValues(word_list, abv, beerName):
     print "Generating ABV for ", beerName + "...",
