@@ -2,7 +2,7 @@
     padding: 0px;
     margin: 0px;
     color: #2d2d2d;
-    overflow: hidden;
+
 
 }
 
@@ -60,7 +60,7 @@ header{
 
 
 .main_content{
-    overflow: hidden;
+
 
     width: 95%;
     height: 83%;
