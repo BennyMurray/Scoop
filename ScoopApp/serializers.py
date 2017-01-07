@@ -34,7 +34,7 @@ class CraftBeerSerializer(serializers.ModelSerializer):
 class VisitorSerializer(serializers.ModelSerializer):
     class Meta:
         model = Visitor
-        fields = '__all__'
+        #fields = '__all__'
 
     def get_queryset(self):
         """

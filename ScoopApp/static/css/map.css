@@ -57,6 +57,7 @@ body{
 
 	height: 50%;
 	width: 50%;
+	overflow: visible;
 	float: left;
 	border: solid 1px transparent;
 }
@@ -83,7 +84,8 @@ body{
 
 #info_div{
 	text-align: center;
-	border: solid 1px black;
+
+
 	height: 100%;
 }
 
@@ -93,4 +95,47 @@ body{
 	position: relative;
 	font-weight: 300;
 	margin-top: 2%;
+}
+
+#province_title{
+	font-size: 2.5vw;
+	position: relative;
+	top: 8%;
+
+}
+
+#province_box{
+	opacity: 0;
+
+
+	position: relative;
+	top: 9%;
+}
+
+#symbols{
+	width: 50%;
+	margin-top: 5%;
+	margin-bottom: 3%;
+}
+
+.value_titles{
+	margin-right: 4.5%;
+	font-size: 1.3vw;
+	display: inline;
+	right: 2.3%;
+	position: relative;
+	transition: 0.5s;
+}
+
+#srm_title{
+	right:0%;
+}
+
+#acidity_title{
+	left: 8%;
+}
+
+
+#ibu_title{
+	left: 3%;
 }

@@ -16,7 +16,20 @@
 <div id="map_right_side">
     <div id="info_div">
     <h2 id="Whats_everybody_title">What's Everyone Drinking?</h2>
-        <h3 id="hover_over">Hover over the map to find out!</h3>
+
+        <h3 id="hover_over">Scoop keeps track of what kind beers people from all over Ireland prefer. <br> <br><br>Hover over the map to find out!</h3>
+
+        <div id="province_box">
+        <h2 id="province_title">Leinster</h2>
+               <img id="symbols" src="{% static 'images/symbols.svg' %}">
+
+            <br>
+            <h3 id="abv_title" class="value_titles">ABV%</h3>
+            <h3 id="srm_title" class="value_titles">SRM</h3>
+            <h3 id="ibu_title" class="value_titles">IBU</h3>
+            <h3 id="acidity_title" class="value_titles">-</h3>
+
+            </div>
     </div>
 </div>
 
@@ -34,26 +47,84 @@ ulster.transform("s0.75,0.75,0,0");
 connaught.transform("s0.75,0.75,0,0");
 
 
-// Iterate through the regions & change Yorkshire’s fill colour to gold
+            var jsonHolder = {
+
+                'Connaught': ['abv', 'ibu', 'SRM', 'ACIDITY'],
+                'Leinster': ['abv', 'ibu', 'SRM', 'ACIDITY'],
+                'Munster': ['abv', 'ibu', 'SRM', 'ACIDITY'],
+                'Ulster': ['abv', 'ibu', 'SRM', 'ACIDITY'],
+            };
+
+{#GET JSON FROM VISITORS API#}
+$.getJSON('/api/Visitors', function(data) {
+
+    jsonHolder['Connaught'][0] = JSON.parse(JSON.stringify(data.connaught[0]));
+    jsonHolder['Connaught'][1] = JSON.parse(JSON.stringify(data.connaught[1]));
+    jsonHolder['Connaught'][2] = JSON.parse(JSON.stringify(data.connaught[2]));
+    jsonHolder['Connaught'][3] = JSON.parse(JSON.stringify(data.connaught[3]));
+    
+    jsonHolder['Leinster'][0] = JSON.parse(JSON.stringify(data.leinster[0]));
+    jsonHolder['Leinster'][1] = JSON.parse(JSON.stringify(data.leinster[1]));
+    jsonHolder['Leinster'][2] = JSON.parse(JSON.stringify(data.leinster[2]));
+    jsonHolder['Leinster'][3] = JSON.parse(JSON.stringify(data.leinster[3]));
+    
+    jsonHolder['Munster'][0] = JSON.parse(JSON.stringify(data.munster[0]));
+    jsonHolder['Munster'][1] = JSON.parse(JSON.stringify(data.munster[1]));
+    jsonHolder['Munster'][2] = JSON.parse(JSON.stringify(data.munster[2]));
+    jsonHolder['Munster'][3] = JSON.parse(JSON.stringify(data.munster[3]));
+    
+    jsonHolder['Ulster'][0] = JSON.parse(JSON.stringify(data.ulster[0]));
+    jsonHolder['Ulster'][1] = JSON.parse(JSON.stringify(data.ulster[1]));
+    jsonHolder['Ulster'][2] = JSON.parse(JSON.stringify(data.ulster[2]));
+    jsonHolder['Ulster'][3] = JSON.parse(JSON.stringify(data.ulster[3]));
+
+});
+
+
+
+
+// Iterate through the regions & change fill
 for (var i = 0; i < regions.length; i++) {
 
 
 
-    // Showing off
+
     regions[i].mouseover(function(e){
-         document.getElementById('Whats_everybody_title').style.top = '0%';
+        var province_name = this.data('id');
+
+        document.getElementById('province_title').innerHTML = capitalizeFirstLetter(province_name);
+        document.getElementById('Whats_everybody_title').style.top = '0%';
         document.getElementById('hover_over').style.top = '0%';
+        document.getElementById('hover_over').innerHTML = 'Scoop keeps track of what kind beers people from all over Ireland prefer.';
+        document.getElementById('province_box').style.opacity = '1';
+
+        document.getElementById('abv_title').innerHTML = jsonHolder[province_name][0];
+        document.getElementById('srm_title').innerHTML = jsonHolder[province_name][1];
+        document.getElementById('ibu_title').innerHTML = jsonHolder[province_name][2];
+        document.getElementById('acidity_title').innerHTML = jsonHolder[province_name][3];
 
         this.node.style.opacity = 0.7;
-        document.getElementById('region-name').innerHTML = this.data('region');
+
+
     });
 
     regions[i].mouseout(function(e){
          document.getElementById('Whats_everybody_title').style.top = '30%';
         document.getElementById('hover_over').style.top = '30%';
+        document.getElementById('province_box').style.opacity = '0';
         this.node.style.opacity = 1;
     });
 }
+
+
+{#Captilize first letter of a word#}
+
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+
+
 
 </script>
 
