@@ -33,6 +33,7 @@ header{
     padding-right: 5%;
     padding-left: 5%;
     padding-top: 1%;
+    margin-bottom: 0.5%;
     height: 5%;
     width: 100%;
 
@@ -61,7 +62,7 @@ header{
     overflow: hidden;
 
     width: 95%;
-    height: 80%;
+    height: 83%;
     margin: 0 auto;
 
     border: dotted 2px rgba(0,0,0,0.1);
@@ -88,7 +89,7 @@ hr {
 
 footer{
     position: absolute;
-    top: 90%;
+    top: 93%;
     height: 10px;
     width: 100%;
     clear: both;

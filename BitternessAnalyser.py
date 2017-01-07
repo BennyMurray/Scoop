@@ -45,4 +45,3 @@ def analyseBitterness(word_list):
             return 100
 
 
-print analyseBitterness(["hoppy", "sweet", "hoppy", "balanced", "malty", "malt", "malty", "drinkable", "sweet", "sweet", "sweet", "sweet"])

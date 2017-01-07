@@ -97,7 +97,7 @@ class CraftBeerAPIViewSet(viewsets.ModelViewSet):
             # print >> sys.stderr, x['beer_name']
 
             new_dict[x['beer_name']] = [x['ABV'], x['IBU'], x['SRM'], x['acidity'], x['image_link']]
-        pickle.dump(new_dict, open("evenbetterdatabase.p", "wb"))
+        #pickle.dump(new_dict, open("evenbetterdatabase.p", "wb"))
 
 
         # Receive Data from user
@@ -113,9 +113,12 @@ class CraftBeerAPIViewSet(viewsets.ModelViewSet):
         user_input = [float(abv), float(colour), float(ibu), float(acidity)]
 
         # Create Visitor Object with Search Parameters
-        if Visitor.objects.filter(ip_address=ip_address).exists() == False:
-            visitor_number = Visitor.objects.count() + 1
-            add_Visitor(visitor_number, ip_address, user_region, str(user_input))
+
+        existing_ip_count = Visitor.objects.filter(ip_address=ip_address).count()
+        
+
+        if existing_ip_count < 1:
+            add_Visitor(Visitor.objects.count() + 1, ip_address, user_region, str(user_input))
 
 
 
@@ -125,7 +128,7 @@ class CraftBeerAPIViewSet(viewsets.ModelViewSet):
         # print >> sys.stderr, "USER INPUT RECORDED"
 
 
-        user_input = [10,10,10,10]
+        #user_input = [10,10,10,10]
 
 
         #Run user's data through beer-finding algorithm and return the results as JSON

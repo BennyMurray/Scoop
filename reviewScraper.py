@@ -4,7 +4,7 @@ from Textcleaner import cleanText
 import urllib2
 
 #number of pages to scrape
-numOfPages = 10
+numOfPages = 20
 
 br = Browser()
 
@@ -59,4 +59,7 @@ def scrapeReviews(beername, beerID):
 
     return cleanText(stringDump)
 
+import pickle
+wordlist = scrapeReviews('sierra nevada pale ale', '370')
 
+pickle.dump(wordlist, open("srm8beer.p", "wb"))
