@@ -128,7 +128,9 @@ h3{
 
 
 
-ul {
+#symbol_ul{
+
+
 	margin-top: 2%;
 	position: relative;
 	left: 9%;
@@ -161,7 +163,23 @@ li {
 }
 
 
+#search_again{
+	cursor: pointer;
 
+
+}
+
+#search_ul{
+	white-space: nowrap;
+	margin-top: 30%;
+	width: 40%;
+	position: relative;
+	left: 25%;
+}
+
+#mag_glass{
+	max-width: 80%;
+}
 
 #slider1{
 	transition: opacity, 0.5s;
@@ -566,6 +584,7 @@ width: 12%;
     width: 30%;
 	height: 100%;
 	text-align: center;
+
 
 }
 

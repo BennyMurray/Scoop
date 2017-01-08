@@ -88,7 +88,7 @@
 
 					<!--Redundant? -->
 					<div id="searchbutton_div">
-						<img id="magglass" src="{% static 'images/magglass.svg' %}">
+
 						<h2 id="searchButton" class="animated infinite flipInY">Hit 'return' to search...</h2>
 					</div>
 	</div>
@@ -103,15 +103,21 @@
 
             
             
-        <ul>
+        <ul id="symbol_ul">
             <li><h3 id="abv_title" class="value_titles">ABV%</h3></li>
                  <li><h3 id="srm_title" class="value_titles">SRM</h3></li>
 
                 <li><h3 id="ibu_title" class="value_titles">IBU</h3></li>
                 <li> <h3 id="acidity_title" class="value_titles">ACIDITY</h3></li>
         </ul>
-            
-            
+
+
+            <ul id="search_ul" onmouseover="animateSearchButton()">
+
+                <li> <img id="mag_glass" src="{% static 'images/mag_glass.svg' %}"></li>
+                 <li><h3 id="search_again" onclick="restart()">search again!</h3></li>
+
+            </ul>
 
 
 
@@ -121,20 +127,20 @@
         <div id="right-side">
             <div id="results_top_row">
                 <div class="beer_container"><a id="beer1_link"><img id="beer1" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_1269.jpg" onmouseover="displayBeerDetails('beer1');" onmouseout="resetBeerDetails();"></a></div>
-                <div class="beer_container"><a id="beer2_link"><img id="beer2" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_365.jpg" onmouseover="displayBeerDetails('beer2')"></a></div>
-                <div class="beer_container"><a id="beer3_link"><img id="beer3" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_70770.jpg" onmouseover="displayBeerDetails('beer3')"></a></div>
-                <div class="beer_container"><a id="beer4_link"><img id="beer4" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_173659.jpg" onmouseover="displayBeerDetails('beer4')"></a></div>
-                <div class="beer_container"><a id="beer5_link"><img id="beer5" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_6925.jpg" onmouseover="displayBeerDetails('beer5')"></a></div>
-                <div class="beer_container"><a id="beer6_link"><img id="beer6" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_9183.jpg" onmouseover="displayBeerDetails('beer6')"></a></div>
+                <div class="beer_container"><a id="beer2_link"><img id="beer2" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_365.jpg" onmouseover="displayBeerDetails('beer2');" onmouseout="resetBeerDetails();"></a></div>
+                <div class="beer_container"><a id="beer3_link"><img id="beer3" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_70770.jpg" onmouseover="displayBeerDetails('beer3');" onmouseout="resetBeerDetails();"></a></div>
+                <div class="beer_container"><a id="beer4_link"><img id="beer4" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_173659.jpg" onmouseover="displayBeerDetails('beer4');" onmouseout="resetBeerDetails();"></a></div>
+                <div class="beer_container"><a id="beer5_link"><img id="beer5" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_6925.jpg" onmouseover="displayBeerDetails('beer5');" onmouseout="resetBeerDetails();"></a></div>
+                <div class="beer_container"><a id="beer6_link"><img id="beer6" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_9183.jpg" onmouseover="displayBeerDetails('beer6');" onmouseout="resetBeerDetails();"></a></div>
             </div>
 
             <div id="results_bottom_row">
-                <div class="beer_container"><a id="beer7_link"><img id="beer7" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_1269.jpg" onmouseover="displayBeerDetails('beer7')"></a></div>
-                <div class="beer_container"><a id="beer8_link"><img id="beer8" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_365.jpg" onmouseover="displayBeerDetails('beer8')"></a></div>
-                <div class="beer_container"><a id="beer9_link"><img id="beer9" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_365.jpg" onmouseover="displayBeerDetails('beer9')"></a></div>
-                <div class="beer_container"><a id="beer10_link"><img id="beer10" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_173659.jpg" onmouseover="displayBeerDetails('beer10')"></a></div>
-                <div class="beer_container"><a id="beer11_link"><img id="beer11" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_6925.jpg" onmouseover="displayBeerDetails('beer11')"></a></div>
-                <div class="beer_container"><a id="beer12_link"><img id="beer12" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_9183.jpg" onmouseover="displayBeerDetails('beer12')"></a></div>
+                <div class="beer_container"><a id="beer7_link"><img id="beer7" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_1269.jpg" onmouseover="displayBeerDetails('beer7');" onmouseout="resetBeerDetails();"></a></div>
+                <div class="beer_container"><a id="beer8_link"><img id="beer8" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_365.jpg" onmouseover="displayBeerDetails('beer8');" onmouseout="resetBeerDetails();"></a></div>
+                <div class="beer_container"><a id="beer9_link"><img id="beer9" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_365.jpg" onmouseover="displayBeerDetails('beer9');" onmouseout="resetBeerDetails();"></a></div>
+                <div class="beer_container"><a id="beer10_link"><img id="beer10" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_173659.jpg" onmouseover="displayBeerDetails('beer10');" onmouseout="resetBeerDetails();"></a></div>
+                <div class="beer_container"><a id="beer11_link"><img id="beer11" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_6925.jpg" onmouseover="displayBeerDetails('beer11');" onmouseout="resetBeerDetails();"></a></div>
+                <div class="beer_container"><a id="beer12_link"><img id="beer12" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_9183.jpg" onmouseover="displayBeerDetails('beer12');" onmouseout="resetBeerDetails();"></a></div>
             </div>
 	    </div>
     </div>
@@ -174,6 +180,8 @@
 
 
 
+
+
 			<!-- Search button animation -->
 			var animation_counter = 0;
 
@@ -184,6 +192,8 @@
 					if(animation_counter == 0){
 
 						document.getElementById('scoop').innerHTML = 'Result!';
+                        var s = document.getElementById("scoop");
+
 						document.getElementById('beer_engine').style.fontSize = "1.25vw";
 						document.getElementById('beer_engine').innerHTML = "hit <b>'Return'</b> to search!";
 
@@ -191,7 +201,7 @@
 
 						document.getElementById('title_div').style.cursor = 'pointer';
 						document.getElementById('searchbutton_div').style.opacity = '0';
-						setTimeout(function(){d.className -= " animated bounceIn";}, 400);
+
 						animation_counter = 1;
 						}
 				}else{
@@ -200,8 +210,7 @@
 						document.getElementById('scoop').innerHTML = 'Scoop';
 						document.getElementById('beer_engine').style.fontSize = "1.3vw";
 						document.getElementById('beer_engine').innerHTML = "beer search engine";
-                        var d = document.getElementById("scoop");
-						d.className += " animated bounceOut";
+
 						document.getElementById('title_div').style.cursor = 'none';
 						document.getElementById('searchbutton_div').style.opacity = '0';
 						setTimeout(function(){d.className -= " animated bounceOut";}, 400);
@@ -350,13 +359,10 @@
 			}
 
 
+
+
 			<!-- Hides main wrapper and displays search results -->
 			function searchResults(){
-
-
-
-
-
 
 
 				document.getElementById('wrapper').style.display = 'none';
@@ -441,43 +447,15 @@
 
         }
 
+        function animateSearchButton(){
+             var b = document.getElementById("search_ul");
+						b.className += " animated swing";
+                setTimeout(function(){ b.className -= " animated swing";}, 500);
 
-{#			function displayBeerDetails(position){#}
-{##}
-{#                switch(position)#}
-{#            {#}
-{#                case 1:#}
-{##}
-{#                    document.getElementById('search_complete').innerHTML = jsonHolder[0];#}
-{#                    break;#}
-{##}
-{#                case 2:#}
-{#                    document.getElementById('search_complete').innerHTML = jsonHolder[1];#}
-{#                    break;#}
-{##}
-{#                case 3:#}
-{#                    document.getElementById('search_complete').innerHTML = jsonHolder[2];#}
-{#                    break;#}
-{##}
-{#                case 4:#}
-{#                    document.getElementById('search_complete').innerHTML = jsonHolder[3];#}
-{#                    break;#}
-{##}
-{#                case 5:#}
-{#                    document.getElementById('search_complete').innerHTML = jsonHolder[4];#}
-{#                    break;#}
-{##}
-{#                case 6:#}
-{#                    document.getElementById('search_complete').innerHTML = jsonHolder[5];#}
-{#                    break;#}
-{##}
-{#                default:#}
-{#                    break;#}
-{##}
-{##}
-{#            }#}
-{##}
-{#            }#}
+        }
+
+
+
 
 
 			<!-- Sets value of a slider -->
