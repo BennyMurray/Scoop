@@ -17,5 +17,10 @@ class CraftBeerAdmin(admin.ModelAdmin):
 
 admin.site.register(CraftBeer, CraftBeerAdmin)
 
-admin.site.register(Test)
-admin.site.register(Visitor)
+
+class VisitorAdmin(admin.ModelAdmin):
+    model = Visitor
+    list_display = ['visitor_number', 'ip_address', 'geolocation', 'search_parameters' ]
+
+
+admin.site.register(Visitor, VisitorAdmin)
