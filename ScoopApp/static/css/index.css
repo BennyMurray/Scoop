@@ -44,16 +44,6 @@ body{
 }
 
 
-#searchButton{
-	font-size: 1.27vw;
-	position: absolute;
-	cursor: pointer;
-	width: 60%;
-	font-weight: lighter;
-	transition: opacity, 0.8s;
-	left: 44%;
-	top: 17%;
-}
 
 
 #searchbutton_div{
@@ -176,7 +166,7 @@ li {
 	margin-top: 30%;
 	width: 40%;
 	position: relative;
-	left: 25%;
+	left: 30%;
 }
 
 #mag_glass{
@@ -583,7 +573,7 @@ width: 12%;
     float: left;
 	position: relative;
 	left: 3%;
-	bottom: 4%;
+	bottom: 7%;
     width: 30%;
 	height: 100%;
 	max-height: 100%;
@@ -596,7 +586,7 @@ width: 12%;
     float: right;
     width: 69%;
 	height: 100%;
-	bottom: 6%;
+	bottom: 1.5%;
 	position: relative;
 	left: 5%;
 

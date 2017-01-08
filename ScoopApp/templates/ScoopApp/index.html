@@ -420,29 +420,36 @@
 
 
 			function displayBeerDetails(position){
-                document.getElementById('search_complete').innerHTML = jsonHolder[position][0];
-                document.getElementById('abv_title').innerHTML = jsonHolder[position][1];
-                document.getElementById('ibu_title').innerHTML = jsonHolder[position][2];
-                document.getElementById('srm_title').innerHTML = jsonHolder[position][3];
-                document.getElementById('acidity_title').innerHTML = jsonHolder[position][4];
+
+
+             setTimeout(function() {
+                 document.getElementById('search_complete').innerHTML = jsonHolder[position][0];
+                 document.getElementById('abv_title').innerHTML = jsonHolder[position][1];
+                 document.getElementById('ibu_title').innerHTML = jsonHolder[position][2];
+                 document.getElementById('srm_title').innerHTML = jsonHolder[position][3];
+                 document.getElementById('acidity_title').innerHTML = jsonHolder[position][4];
+
+             }, 20);
             }
 
 
-            function resetBeerDetails(){
+            function resetBeerDetails() {
 
-            document.getElementById('search_complete').innerHTML = 'Search Complete!';
-            document.getElementById('abv_title').innerHTML = "ABV";
-            document.getElementById('ibu_title').innerHTML = "IBU";
-            document.getElementById('srm_title').innerHTML = "SRM";
-            document.getElementById('acidity_title').innerHTML ="ACIDITY";
+                setTimeout(function () {
+                    document.getElementById('search_complete').innerHTML = 'Search Complete!';
+                    document.getElementById('abv_title').innerHTML = "ABV";
+                    document.getElementById('ibu_title').innerHTML = "IBU";
+                    document.getElementById('srm_title').innerHTML = "SRM";
+                    document.getElementById('acidity_title').innerHTML = "ACIDITY";
 
 
-        }
+                }, 20);
+            }
 
             function animateSearchButton(){
                  var b = document.getElementById("search_ul");
-                            b.className += " animated swing";
-                    setTimeout(function(){ b.className -= " animated swing";}, 500);
+                            b.className += " animated pulse";
+                    setTimeout(function(){ b.className -= " animated pulse";}, 500);
             }
 
 
