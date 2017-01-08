@@ -41,11 +41,38 @@
 
 <script>
 
-leinster.transform("s0.75,0.75,0,0");
-munster.transform("s0.75,0.75,0,0");
-ulster.transform("s0.75,0.75,0,0");
-connaught.transform("s0.75,0.75,0,0");
 
+{#JAVASCRIPT MEDIA QUERIES#}
+
+var hq = window.matchMedia( "(min-width: 1500px)" );
+var mq = window.matchMedia( "(min-width: 1200px)" );
+var lq = window.matchMedia( "(min-width: 800px)" );
+
+
+if (hq.matches) {
+
+    leinster.transform("s0.75,0.75,0,0");
+    munster.transform("s0.75,0.75,0,0");
+    ulster.transform("s0.75,0.75,0,0");
+    connaught.transform("s0.75,0.75,0,0");
+    
+}else if (mq.matches) {
+
+    leinster.transform("s0.60,0.60,0,0");
+    munster.transform("s0.60,0.60,0,0");
+    ulster.transform("s0.60,0.60,0,0");
+    connaught.transform("s0.60,0.60,0,0");
+    
+}else if (mq.matches) {
+    
+     leinster.transform("s0.50,0.50,0,0");
+    munster.transform("s0.50,0.50,0,0");
+    ulster.transform("s0.50,0.50,0,0");
+    connaught.transform("s0.50,0.50,0,0");
+    
+    
+    
+}
 
             var jsonHolder = {
 
