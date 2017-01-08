@@ -25,6 +25,12 @@ def indexView(request):
     return render(request, 'ScoopApp/index.html', {})
 
 
+#ABOUT PAGE VIEW
+#-------------#
+def aboutView(request):
+    return render(request, 'ScoopApp/about.html', {})
+
+
 #MAP PAGE VIEW
 #-------------#
 def mapView(request):

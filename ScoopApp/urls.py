@@ -13,5 +13,6 @@ router.register(r'Visitors', VisitorAPIViewSet)
 urlpatterns = [
     url(r'^$', views.indexView, name='indexView'),
     url(r'^map$', views.mapView, name='indexView'),
+    url(r'^about$', views.aboutView, name='aboutView'),
     url(r'^', include(router.urls)),
 ]

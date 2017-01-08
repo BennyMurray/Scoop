@@ -1,0 +1,30 @@
+{% extends 'ScoopApp/base.html' %}
+
+{% load staticfiles%}
+
+
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock %}
+
+
+
+
+
+{% block content %}
+
+
+         <div id="wrapper_about">
+             <h1 id="about">SCOOP</h1>
+              <img id="symbols" src="{% static 'images/symbols.svg' %}">
+
+
+            <p><br><br><b>What is Scoop?</b><br><br>Scoop is a new way to find the right craft beer in Ireland.<br><br><br><br>
+            <b>Why is Scoop interesting?</b><br><br>
+            Good Question. First-off, Scoop lets you ergonomically search for craft beer based on sensory and visiual parameters such as apparent strength, colour,
+            bitterness and acidity. Secondly, Scoop is novel in that it populates it's database by analysing thousands of beer reviews every week. It thus focuses on the <b>apparent</b>
+            characteristics of a beer (what you actually see and taste) rather than spepcifc published metrics such as ABV, IBU and SRM. <br><br><br><br><b>"Oh Cool. Is Scoop then the objectively best way to find  good beer?"</b><br><br>
+            Who knows?! But it's one way! </p>
+        </div>
+
+{% endblock %}

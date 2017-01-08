@@ -1,0 +1,34 @@
+
+
+#symbols{
+    width: 16vw;
+    margin-top: 2%;
+    position: relative;
+
+}
+
+
+#about{
+    font-size: 4vw;
+    position: relative;
+
+}
+
+
+
+
+
+#wrapper_about{
+
+    padding-left:28%;
+    padding-right: 28%;
+    text-align: center;
+    margin: 7%;
+    height: 40%;
+
+}
+
+p{
+    margin-top: 8%;
+    font-size: 0.8vw;
+}

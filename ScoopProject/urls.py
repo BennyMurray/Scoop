@@ -13,6 +13,7 @@ urlpatterns = [
     url(r'^api/', include('ScoopApp.urls', namespace='ScoopApp')),
     url(r'', include('ScoopApp.urls')),
     url(r'^map', include('ScoopApp.urls')),
+    url(r'^about', include('ScoopApp.urls')),
 
 ]
 
