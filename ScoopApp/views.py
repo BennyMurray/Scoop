@@ -1,10 +1,12 @@
 from __future__ import division
+import sys
 from ast import literal_eval
 from django.forms.models import model_to_dict
 from django.shortcuts import render
 from rest_framework import viewsets
 from rest_framework.response import Response
 from findBeer import *
+from findStyle import *
 from .models import CraftBeer
 from .models import Visitor
 from .serializers import CraftBeerSerializer, VisitorSerializer
@@ -112,9 +114,6 @@ class VisitorAPIViewSet(viewsets.ModelViewSet):
 
 
 
-
-
-
         #Convert model objects to dictionary
         leinster_list = []
         munster_list = []
@@ -144,14 +143,19 @@ class VisitorAPIViewSet(viewsets.ModelViewSet):
 
 
 
-            json_for_export = {
+        leinster_style = findStyle(map(averageListValues, zip(*leinster_list)))
+        connaught_style = findStyle(map(averageListValues, zip(*leinster_list)))
+        ulster_style = findStyle(map(averageListValues, zip(*leinster_list)))
+        munster_style = findStyle(map(averageListValues, zip(*leinster_list)))
 
-                'leinster': map(averageListValues, zip(*leinster_list)),
-                'munster': map(averageListValues, zip(*munster_list)),
-                'ulster': map(averageListValues, zip(*ulster_list)),
-                'connaught': map(averageListValues, zip(*connaught_list))
+        json_for_export = {
 
-                               }
+            'leinster': map(averageListValues, zip(*leinster_list)),
+            'munster': map(averageListValues, zip(*munster_list)),
+            'ulster': map(averageListValues, zip(*ulster_list)),
+            'connaught': map(averageListValues, zip(*connaught_list)),
+            'styles': [leinster_style, connaught_style, ulster_style, munster_style]
+                           }
 
         # print >> '!!!!!!!', type(ip_address) is str
         # Visitor.objects.get(ip_address='128').update(search_parameters='string')

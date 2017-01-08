@@ -10,6 +10,8 @@
 {% block content %}
 
 
+
+<!-- MAP CONTAINER -->
 <div id="rsr"></div>
 
 
@@ -29,9 +31,13 @@
             <h3 id="ibu_title" class="value_titles">IBU</h3>
             <h3 id="acidity_title" class="value_titles">-</h3>
 
-            </div>
+            <h3 id="style_title">Recommended Style<br><br><span id="beer_style">BEER</span></h3>
+        </div>
+
+
     </div>
 </div>
+
 
 <script src="{% static 'libraries/../../static/map/raphael.min.js' %}"></script>
 <script src="{% static 'map/map.js' %}"></script>
@@ -68,10 +74,11 @@ if (hq.matches) {
 
             var jsonHolder = {
 
-                'Connaught': ['abv', 'ibu', 'SRM', 'ACIDITY'],
-                'Leinster': ['abv', 'ibu', 'SRM', 'ACIDITY'],
-                'Munster': ['abv', 'ibu', 'SRM', 'ACIDITY'],
-                'Ulster': ['abv', 'ibu', 'SRM', 'ACIDITY'],
+                'Connaught': ['abv', 'ibu', 'SRM', 'ACIDITY', 'style'],
+                'Leinster': ['abv', 'ibu', 'SRM', 'ACIDITY', 'style'],
+                'Munster': ['abv', 'ibu', 'SRM', 'ACIDITY', 'style'],
+                'Ulster': ['abv', 'ibu', 'SRM', 'ACIDITY', 'style'],
+                'styles': ['leinster', 'connaught','ulster', 'munster']
             };
 
 {#GET JSON FROM VISITORS API#}
@@ -97,6 +104,11 @@ $.getJSON('/api/Visitors', function(data) {
     jsonHolder['Ulster'][2] = JSON.parse(JSON.stringify(data.ulster[2]));
     jsonHolder['Ulster'][3] = JSON.parse(JSON.stringify(data.ulster[3]));
 
+    jsonHolder['Leinster'][4] = JSON.parse(JSON.stringify(data.styles[0]));
+    jsonHolder['Connaught'][4] = JSON.parse(JSON.stringify(data.styles[1]));
+    jsonHolder['Ulster'][4] = JSON.parse(JSON.stringify(data.styles[2]));
+    jsonHolder['Munster'][4] = JSON.parse(JSON.stringify(data.styles[3]));
+
 });
 
 
@@ -121,6 +133,9 @@ for (var i = 0; i < regions.length; i++) {
         document.getElementById('srm_title').innerHTML = jsonHolder[province_name][1];
         document.getElementById('ibu_title').innerHTML = jsonHolder[province_name][2];
         document.getElementById('acidity_title').innerHTML = jsonHolder[province_name][3];
+        document.getElementById('beer_style').innerHTML = jsonHolder[province_name][4];
+
+        determineStyle(jsonHolder[province_name][0], jsonHolder[province_name][1], jsonHolder[province_name][2], jsonHolder[province_name][3]);
 
         this.node.style.opacity = 0.7;
 
@@ -141,6 +156,10 @@ for (var i = 0; i < regions.length; i++) {
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
+
+
+
+
 
 
 

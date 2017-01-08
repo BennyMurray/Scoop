@@ -3,29 +3,37 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Scoop</title>
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
-    {% block extra_head %}{% endblock %}
-</head>
-<body>
-    <header>
-        <a class="nav-link" href="/map">What are People drinking?</a>
-        <a class="nav-link">About</a>
-        <a class="nav-link" href="/">Home</a>
-    </header>
 
 
-    <div class="main_content">
-            {% block content %}
-            {% endblock %}
-    </div>
+    <head>
+        <meta charset="UTF-8">
+        <title>Scoop</title>
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+        {% block extra_head %}{% endblock %}
+    </head>
 
-    <footer>
-        <hr>
-        <h6 id="signature">Scoop © Benjamin Murray 2017 </h6>
-    </footer>
 
-</body>
+    <body>
+
+        <!-- NAVIGATION BAR -->
+
+        <header>
+            <a class="nav-link" href="/map">What are People drinking?</a>
+            <a class="nav-link">About</a>
+            <a class="nav-link" href="/">Home</a>
+        </header>
+
+
+        <div class="main_content">
+                {% block content %}
+                {% endblock %}
+        </div>
+
+        <footer>
+            <hr>
+            <h6 id="signature">Scoop © Benjamin Murray 2017 </h6>
+        </footer>
+
+    </body>
+
 </html>

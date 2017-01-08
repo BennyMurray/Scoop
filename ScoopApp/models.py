@@ -9,7 +9,7 @@ class CraftBeer(models.Model):
     SRM = models.IntegerField(default="4")
     IBU = models.FloatField(default="25")
     acidity = models.IntegerField(default="0")
-    image_link = models.CharField(max_length=300, default="http://media.istockphoto.com/photos/beer-bottle-picture-id175533358?k=6&m=175533358&s=170667a&w=0&h=de2hI2j7Ie8LiNCvkRlS-wwxhChsggEDoX9SDagZnAY=")
+    image_link = models.CharField(max_length=300, default="http://i.imgur.com/kB5Xe4v.jpg")
     sequence_added = models.IntegerField(default=0)
 
 

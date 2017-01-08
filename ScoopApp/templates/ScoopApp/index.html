@@ -4,10 +4,14 @@
 
 
 {% block extra_head %}
+
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
     <link rel="stylesheet" href="{% static 'css/powerange.css' %}"/>
 	<link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <script type="text/javascript" src="{% static 'js/index_logic' %}"></script>
+
 {% endblock %}
+
 
 {% block content %}
 
@@ -65,19 +69,14 @@
 
 				<div id="alcoholline_div">
 					<img id="alcoholline" src="{% static 'images/alcoholline.svg' %}" class="info">
-
-
 					<h6 id="alcohol_text" class="info"> <span id="percentage">4.8</span>% (abv)</h6>
-
 					<img id="colourline" src="{% static 'images/colourline.svg' %}" class="info">
 					<h6 id="colour_text" class="info"><span id="srm">0</span> SRM (colour)</h6>
-
 					<img id="hopline" class="info" src="{% static 'images/hopline.svg' %}">
 					<h6 id="hop_text" class="info" ><span id="ibu">0</span> IBU</h6>
 					<img src="{% static 'images/cone.svg' %}" id="cone1" class="info">
 					<img src="{% static 'images/cone.svg' %}" id="cone2" class="info">
 					<img src="{% static 'images/cone.svg' %}" id="cone3" class="info">
-
 					<img id="lemonline" class="info" src="{% static 'images/lemonline.svg' %}">
 					<h6 id="lemon_text" class="info"><span id="ibu">Acidity</span></h6>
 					<img src="{% static 'images/lemon.svg' %}" id="lemon1" class="info">
@@ -95,35 +94,39 @@
 
 
 	<!-- Results container - appears on fetch -->
+
 	<div id="result_wrapper">
+
+
+
+
+    <!-- Results container - appears on fetch -->
+
+
+        <!-- Left Side of Results Page: Beer Values and Beer Name -->
+
         <div id="left-side">
             <h1 id="search_complete">Search Complete!</h1>
             <h3 id="simply_hover">Simply hover over a beer for more info</h3>
             <img id="symbols" src="{% static 'images/symbols.svg' %}">
 
-            
-            
         <ul id="symbol_ul">
             <li><h3 id="abv_title" class="value_titles">ABV%</h3></li>
                  <li><h3 id="srm_title" class="value_titles">SRM</h3></li>
-
                 <li><h3 id="ibu_title" class="value_titles">IBU</h3></li>
                 <li> <h3 id="acidity_title" class="value_titles">ACIDITY</h3></li>
         </ul>
 
-
-            <ul id="search_ul" onmouseover="animateSearchButton()">
-
-                <li> <img id="mag_glass" src="{% static 'images/mag_glass.svg' %}"></li>
-                 <li><h3 id="search_again" onclick="restart()">search again!</h3></li>
-
-            </ul>
-
-
+        <ul id="search_ul" onmouseover="animateSearchButton()">
+            <li> <img id="mag_glass" src="{% static 'images/mag_glass.svg' %}"></li>
+             <li><a href="/"><h3 id="search_again">search again!</h3></a></li>
+        </ul>
 
 
         </div>
 
+
+        <!-- Right of Results Page: Beer Images -->
         <div id="right-side">
             <div id="results_top_row">
                 <div class="beer_container"><a id="beer1_link"><img id="beer1" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_1269.jpg" onmouseover="displayBeerDetails('beer1');" onmouseout="resetBeerDetails();"></a></div>
@@ -147,6 +150,11 @@
 
 
 
+
+
+
+
+
 	<!-- -------------SCRIPTS------------------ -->
 
 	<!-- JQuery (required by below libraries) -->
@@ -165,7 +173,8 @@
 
 		})
 
-		<!-- Initialise sliders -->
+
+{#		<!-- Initialise sliders -->#}
 			var elem = document.querySelector('.strength');
 			var init = new Powerange(elem, {callback: changeAlcohol, decimal: true, vertical: false, min: 0, max: 15, start: 0, step:0.1, hideRange: true});
 
@@ -182,7 +191,7 @@
 
 
 
-			<!-- Search button animation -->
+{#			<!-- Search button animation -->#}
 			var animation_counter = 0;
 
 			function check(){
@@ -193,12 +202,9 @@
 
 						document.getElementById('scoop').innerHTML = 'Result!';
                         var s = document.getElementById("scoop");
-
+                        s.className += " animated bounceIn";
 						document.getElementById('beer_engine').style.fontSize = "1.25vw";
 						document.getElementById('beer_engine').innerHTML = "hit <b>'Return'</b> to search!";
-
-
-
 						document.getElementById('title_div').style.cursor = 'pointer';
 						document.getElementById('searchbutton_div').style.opacity = '0';
 
@@ -213,11 +219,13 @@
 
 						document.getElementById('title_div').style.cursor = 'none';
 						document.getElementById('searchbutton_div').style.opacity = '0';
-						setTimeout(function(){d.className -= " animated bounceOut";}, 400);
+                        var s = document.getElementById("scoop");
+						setTimeout(function(){s.className -= " animated bounceOut";}, 400);
 						animation_counter = 0;}
 						}
 				}
 			}
+
 
 
 		<!-- Attribute animations (e.g. Strength - Colour - Bitterness - Funk) -->
@@ -240,6 +248,7 @@
 				var y = elem.value;
 				document.getElementById('percentage').innerHTML = y;
 			}
+
 
 			<!-- COLOUR -->
 			function changeColour() {
@@ -268,8 +277,9 @@
 			}
 
 
+
 			<!-- BITTERNESS -->
-			<!-- !!!VERBOSE BECAUSE OPERATORS NOT WORKING FOR SOME REASON -->
+			<!-- Note: Verbose due to operators not behaving predictably -->
 				function changeBitterness() {
 				check();
 
@@ -313,7 +323,7 @@
 
 
 			<!-- ACIDITY/FUNK -->
-			<!-- !!!VERBOSE BECAUSE OPERATORS NOT WORKING FOR SOME REASON -->
+
 			function changeLemon() {
 
 
@@ -364,7 +374,6 @@
 			<!-- Hides main wrapper and displays search results -->
 			function searchResults(){
 
-
 				document.getElementById('wrapper').style.display = 'none';
 				document.getElementById('wrapper').style.opacity = '0';
 				document.getElementById('result_wrapper').style.display = 'inline-block';
@@ -378,7 +387,6 @@
 				setTimeout(function(){document.getElementById('beer4').className += " animated bounceIn";},610);
 				setTimeout(function(){document.getElementById('beer5').className += " animated bounceIn";}, 810);
 				setTimeout(function(){document.getElementById('beer6').className += " animated bounceIn";},1010);
-
                 setTimeout(function(){document.getElementById('beer7').className += " animated bounceIn";},1200);
 				setTimeout(function(){document.getElementById('beer8').className += " animated bounceIn";},1410);
 				setTimeout(function(){document.getElementById('beer9').className += " animated bounceIn";},1610);
@@ -386,7 +394,6 @@
 				setTimeout(function(){document.getElementById('beer11').className += " animated bounceIn";}, 2010);
 				setTimeout(function(){document.getElementById('beer12').className += " animated bounceIn";},2210);
 				setTimeout(function(){document.getElementById('checkout').className += " animated bounceIn";},2410);
-
                 setTimeout(function(){$( ".beer" ).css( "transition", "0.2s" );},2410);
 
 
@@ -394,45 +401,30 @@
 
 
 			<!-- Returns page to default state -->
-			function restart(){
+			function restart() {
 
-				document.getElementById('searchbutton_div').style.opacity = '0';
-{#				setTimeout(function(){document.getElementById('checkout').style.opacity = '0';},10);#}
-{#				setTimeout(function(){document.getElementById('beer6').style.opacity = '0';},10);#}
-{#				setTimeout(function(){document.getElementById('beer5').style.opacity = '0';},210);#}
-{#				setTimeout(function(){document.getElementById('beer4').style.opacity = '0';},410);#}
-{#				setTimeout(function(){document.getElementById('beer3').style.opacity = '0';},610);#}
-{#				setTimeout(function(){document.getElementById('beer2').style.opacity = '0';}, 810);#}
-{#				setTimeout(function(){document.getElementById('beer1').style.opacity = '0';},1010);#}
-				setTimeout(function(){document.getElementById('result_header').style.display = 'none';}, 10);
-				setTimeout(function(){document.getElementById('result_wrapper').style.display = 'none';},210);
-				setTimeout(function(){document.getElementById('wrapper').style.display = 'inline-block'; },420);
-				setTimeout(function(){document.getElementById('wrapper').style.opacity = '1';},500);
-				document.getElementById('cone1').style.opacity = '0';
-				document.getElementById('cone2').style.opacity = '0';
-				document.getElementById('cone3').style.opacity = '0';
-				setSliderValue(init, 0);
-				setSliderValue(init2, 0);
-				setSliderValue(init3, 0);
-				setSliderValue(init4, 0);
-				document.getElementById('searchbutton_div').style.opacity = '0';
-				check();
-			}
+                document.getElementById('wrapper').style.display = 'inline-block';
+				document.getElementById('wrapper').style.opacity = '1';
+				document.getElementById('result_wrapper').style.display = 'none';
+                document.getElementById('cone1').style.opacity = '0';
+                document.getElementById('cone2').style.opacity = '0';
+                document.getElementById('cone3').style.opacity = '0';
+                setSliderValue(init, 0);
+                setSliderValue(init2, 0);
+                setSliderValue(init3, 0);
+                setSliderValue(init4, 0);
+                document.getElementById('searchbutton_div').style.opacity = '0';
+                check();
+
+            }
 
 
 			function displayBeerDetails(position){
-
                 document.getElementById('search_complete').innerHTML = jsonHolder[position][0];
                 document.getElementById('abv_title').innerHTML = jsonHolder[position][1];
                 document.getElementById('ibu_title').innerHTML = jsonHolder[position][2];
                 document.getElementById('srm_title').innerHTML = jsonHolder[position][3];
                 document.getElementById('acidity_title').innerHTML = jsonHolder[position][4];
-{##}
-{#                document.getElementById('ibu_title').style.left = '0%';#}
-{#                document.getElementById('ibu_title').style.left = '5.6%';#}
-{#                document.getElementById('srm_title').style.right= '6.6%';#}
-{#                document.getElementById('acidity_title').style.left = '17.4%';#}
-
             }
 
 
@@ -447,12 +439,11 @@
 
         }
 
-        function animateSearchButton(){
-             var b = document.getElementById("search_ul");
-						b.className += " animated swing";
-                setTimeout(function(){ b.className -= " animated swing";}, 500);
-
-        }
+            function animateSearchButton(){
+                 var b = document.getElementById("search_ul");
+                            b.className += " animated swing";
+                    setTimeout(function(){ b.className -= " animated swing";}, 500);
+            }
 
 
 
@@ -491,19 +482,17 @@
 
 
 
-
+{#            RETRIEVES CLIENT IP FROM PUBLIC API#}
 
                   $.getJSON('//freegeoip.net/json/?callback=?', function(user_ip) {
               console.log(JSON.stringify(user_ip, null, 2));
 
                     ip_info['user_ip'] = user_ip.ip;
                     ip_info['user_region'] = user_ip.region_name;
-
-
             });
 
 
-
+{#            TABLES FOR STORINE JSON DATA#}
 			var ip_info = {'user_ip':[],'user_region':[]};
 
             var jsonHolder = {
@@ -529,15 +518,8 @@
 			if(e.which == 13) {
 
 
-
-
-
 {#			$.getJSON("http://scoop.pythonanywhere.com/api/Craftbeers/", {#}
             $.getJSON("/api/Craftbeers/", {
-
-
-
-
 
 
 				a:elem.value,
@@ -546,10 +528,6 @@
 				d:elem4.value,
                 e:ip_info['user_ip'],
                 f:ip_info['user_region']
-
-
-
-
 
 			}, function(data){
                     http://res.cloudinary.com/ratebeer/image/upload/w_120,c_limit/beer_365.jpg%22
@@ -583,22 +561,7 @@
                     jsonHolder['beer11'] = [JSON.parse(JSON.stringify(data.eleventh['name'])), JSON.parse(JSON.stringify(data.eleventh['ABV'])), JSON.parse(JSON.stringify(data.eleventh['IBU'])), JSON.parse(JSON.stringify(data.eleventh['SRM'])), JSON.parse(JSON.stringify(data.eleventh['acidity']))];
                     jsonHolder['beer12'] = [JSON.parse(JSON.stringify(data.twelfth['name'])), JSON.parse(JSON.stringify(data.twelfth['ABV'])), JSON.parse(JSON.stringify(data.twelfth['IBU'])), JSON.parse(JSON.stringify(data.twelfth['SRM'])), JSON.parse(JSON.stringify(data.twelfth['acidity']))];
 
-{#                    jsonHolder.push(JSON.parse(JSON.stringify(data.first['name'])));#}
-{#                    jsonHolder.push(JSON.parse(JSON.stringify(data.second['name'])));#}
-{#                    jsonHolder.push(JSON.parse(JSON.stringify(data.third['name'])));#}
-{#                    jsonHolder.push(JSON.parse(JSON.stringify(data.fourth['name'])));#}
-{#                    jsonHolder.push(JSON.parse(JSON.stringify(data.fifth['name'])));#}
-{#                    jsonHolder.push(JSON.parse(JSON.stringify(data.sixth['name'])));#}
 
-{##}
-{#					document.getElementById("beer1_link").href="http://www.ratebeer.com/beer/"+data.result[0].first[2]+"/";#}
-{#					document.getElementById("beer2_link").href="http://www.ratebeer.com/beer/"+data.result[0].second[2]+"/";#}
-{#					document.getElementById("beer3_link").href="http://www.ratebeer.com/beer/"+data.result[0].third[2]+"/";#}
-{##}
-{#					document.getElementById("beer4_link").href="http://www.ratebeer.com/beer/"+data.result[0].fourth[2]+"/";#}
-{#					document.getElementById("beer5_link").href="http://www.ratebeer.com/beer/"+data.result[0].fifth[2]+"/";#}
-{#					document.getElementById("beer6_link").href="http://www.ratebeer.com/beer/"+data.result[0].sixth[2]+"/";#}
-{##}
 					searchResults();
 
 			});
@@ -607,8 +570,6 @@
 
 
 		</script>
-
-
 
 
 
