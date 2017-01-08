@@ -123,24 +123,41 @@ h3{
 	display: inline-block;
 	margin-right: 5%;
 	position: relative;
-	right: 11.9%;
+	right: 16%;
 }
 
 
-#abv_title{
 
+ul {
+	margin-top: 2%;
+	position: relative;
+	left: 9%;
+    width: 90%;
+    display: table;
+    table-layout: fixed; /* optional, for equal spacing */
+    border-collapse: collapse;
+}
+li {
+    display: table-cell;
+    text-align: center;
+
+    vertical-align: middle;
+}
+
+#abv_title{
+	right: 9%;
 }
 
 #ibu_title{
-	right: 0%;
+	right:26.5%
 }
 
 #srm_title{
-	right: 6%;
+
 }
 
 #acidity_title{
-	left: 15.4%;
+	right: 16%;
 }
 
 

@@ -100,17 +100,27 @@
             <h1 id="search_complete">Search Complete!</h1>
             <h3 id="simply_hover">Simply hover over a beer for more info</h3>
             <img id="symbols" src="{% static 'images/symbols.svg' %}">
-            <h3 id="abv_title" class="value_titles">ABV%</h3>
-            <h3 id="srm_title" class="value_titles">SRM</h3>
-            <h3 id="ibu_title" class="value_titles">IBU</h3>
 
-            <h3 id="acidity_title" class="value_titles">-</h3>
+            
+            
+        <ul>
+            <li><h3 id="abv_title" class="value_titles">ABV%</h3></li>
+                 <li><h3 id="srm_title" class="value_titles">SRM</h3></li>
+
+                <li><h3 id="ibu_title" class="value_titles">IBU</h3></li>
+                <li> <h3 id="acidity_title" class="value_titles">ACIDITY</h3></li>
+        </ul>
+            
+            
+
+
+
 
         </div>
 
         <div id="right-side">
             <div id="results_top_row">
-                <div class="beer_container"><a id="beer1_link"><img id="beer1" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_1269.jpg" onmouseover="displayBeerDetails('beer1')"></a></div>
+                <div class="beer_container"><a id="beer1_link"><img id="beer1" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_1269.jpg" onmouseover="displayBeerDetails('beer1');" onmouseout="resetBeerDetails();"></a></div>
                 <div class="beer_container"><a id="beer2_link"><img id="beer2" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_365.jpg" onmouseover="displayBeerDetails('beer2')"></a></div>
                 <div class="beer_container"><a id="beer3_link"><img id="beer3" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_70770.jpg" onmouseover="displayBeerDetails('beer3')"></a></div>
                 <div class="beer_container"><a id="beer4_link"><img id="beer4" class="beer" src="http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_173659.jpg" onmouseover="displayBeerDetails('beer4')"></a></div>
@@ -405,16 +415,31 @@
 
 
 			function displayBeerDetails(position){
-                var simply = document.getElementById("simply_hover");
-						simply.className += " animated bounceOut";
+
                 document.getElementById('search_complete').innerHTML = jsonHolder[position][0];
                 document.getElementById('abv_title').innerHTML = jsonHolder[position][1];
                 document.getElementById('ibu_title').innerHTML = jsonHolder[position][2];
                 document.getElementById('srm_title').innerHTML = jsonHolder[position][3];
                 document.getElementById('acidity_title').innerHTML = jsonHolder[position][4];
-
+{##}
+{#                document.getElementById('ibu_title').style.left = '0%';#}
+{#                document.getElementById('ibu_title').style.left = '5.6%';#}
+{#                document.getElementById('srm_title').style.right= '6.6%';#}
+{#                document.getElementById('acidity_title').style.left = '17.4%';#}
 
             }
+
+
+            function resetBeerDetails(){
+
+            document.getElementById('search_complete').innerHTML = 'Search Complete!';
+            document.getElementById('abv_title').innerHTML = "ABV";
+            document.getElementById('ibu_title').innerHTML = "IBU";
+            document.getElementById('srm_title').innerHTML = "SRM";
+            document.getElementById('acidity_title').innerHTML ="ACIDITY";
+
+
+        }
 
 
 {#			function displayBeerDetails(position){#}
