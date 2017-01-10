@@ -32,6 +32,7 @@ def compileBeerList():
         except TypeError:
             image_link = "image not found"
 
+        #Analyse with Semantic Analyser to attach values for bitterness, strength, colour and acidity
         value_list = getValues(word_list, beer_dict[beerName][0], beerName)
         beer_data_list.append([beerName, beer_dict[beerName][1], value_list[0], value_list[1], value_list[2], value_list[3], image_link])
 

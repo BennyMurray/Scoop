@@ -1,12 +1,5 @@
-import pickle
+
 import operator
-
-#Import web-scraped beer dictionary
-#beer_dict has following format: {STRENGTH - IMAGE_LINK - BITTERNESS - COLOUR - ACIDITY - RATEBEER_LINK_CODE}
-#dict = pickle.load(open( "beerDictionary.p", "rb" ))
-
-
-
 
 #Compares two beers
 def compare(list1, list2):
@@ -45,15 +38,9 @@ def find_beer(choice, dict):
         new_dict[i] = compare(choice, (dict[i])) + (counter * 0.05) #offsets values by a fraction to avoid duplicate key values
         counter += 1
 
-    # #appends results to a new list and sorts
-    # comparison_list = []
-    # for i in new_dict:
-    #     comparison_list.append(new_dict[i])
-    # comparison_list.sort()
 
     #Sorts by least different
     sorted_beers = sorted(new_dict.items(), key=operator.itemgetter(1))
-
 
 
     #creates dict for json export
@@ -63,9 +50,6 @@ def find_beer(choice, dict):
     for i in range(12):
         beer_value_list = dict[sorted_beers[i][0]]
         result_dict[dict_names[i]] = {"name": sorted_beers[i][0], "ABV" : beer_value_list[0], "IBU": beer_value_list[1], "SRM" : beer_value_list[2], "acidity" : beer_value_list[3], "image_link": beer_value_list[4]}
-
-    # for i in range(6):
-    #     result_dict[dict_names[i]] = new_dict.keys()[new_dict.values().index(comparison_list[i])], dict[new_dict.keys()[new_dict.values().index(comparison_list[i])]][1],dict[new_dict.keys()[new_dict.values().index(comparison_list[i])]][5]
 
     return result_dict
 

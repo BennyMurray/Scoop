@@ -1,6 +1,6 @@
 import os
 
-from CompileBeerList import compileBeerList
+from BeerCompiler import compileBeerList
 from geolocator import getGeoLocation
 
 

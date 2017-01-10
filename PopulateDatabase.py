@@ -1,5 +1,5 @@
 import os
-from CompileBeerList import compileBeerList
+from BeerCompiler import compileBeerList
 
 
 #POPULATE DATABASE WITH BEER OBJECTS
