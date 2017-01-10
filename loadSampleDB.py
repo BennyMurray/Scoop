@@ -85,8 +85,5 @@ if __name__ == '__main__':
     from django.contrib.auth.models import User
     from django.db import IntegrityError
 
-    populate()  # Call the populate function, which calls the
-    # add_genre and add_musician functions
-
-
+    populate()  # Call the populate function
 

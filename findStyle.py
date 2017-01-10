@@ -11,10 +11,10 @@ dict = {
         'Imperial_IPA': [9, 5, 60, 0],
         'Oude Geuze': [6, 5, 3, 8 ],
         'Belgian Blonde': [6, 5, 3, 0],
-        'Imperial Stout': [12, 40, 22, 0],
+        'Russian Imperial Stout': [12, 40, 22, 0],
         'Oatmeal Stout': [4, 35, 20, 0],
         'Session IPA': [3, 3, 50, 0],
-        'Belgian Dark Ale': [13, 41, 21, 0],
+        'Belgian Dark Ale': [12, 21, 21, 0],
         'Irish Stout': [4, 40, 21, 0],
         'Belgian Triple': [9, 4, 14, 0],
         'Oude Bruin': [6, 16, 4, 7],
@@ -43,8 +43,8 @@ dict = {
 #Compares two beers
 def compare(list1, list2):
     difference_one = abs(float(list1[0])-float(list2[0])) #strength
-    difference_two = abs(float(list1[2])-float(list2[1])) #bitterness
-    difference_three = (abs(float(list1[1])-float(list2[2])))#color
+    difference_two = abs(float(list1[1])-float(list2[2])) #bitterness
+    difference_three = (abs(float(list1[2])-float(list2[1])))#color
     difference_four = abs(float(list1[3])-float(list2[3])) #acidity/funk
 
     #Eliminates inactive sliders
@@ -62,7 +62,7 @@ def compare(list1, list2):
         difference_four = 0
 
     #Applies weightings and calculates total difference
-    total_difference = (difference_one * 6) + (difference_three * 4) + (difference_four) + (difference_two * 1.8)
+    total_difference = (difference_one*6) + (difference_three * 2.5) + (difference_four*10) + (difference_two * 1.5)
     return total_difference
 
 

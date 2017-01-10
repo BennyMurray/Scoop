@@ -66,7 +66,7 @@ class CraftBeerAPIViewSet(viewsets.ModelViewSet):
             #populate empty_dictionary with converted beer objects
             new_dict[converted_object['beer_name']] = [converted_object['ABV'], converted_object['IBU'], converted_object['SRM'], converted_object['acidity'], converted_object['image_link']]
 
-        #pickle.dump(new_dict, open("somuchclicking.p", "wb"))
+        #pickle.dump(new_dict, open("printme.p", "wb"))
 
 
         # Receive Data from client
@@ -150,9 +150,10 @@ class VisitorAPIViewSet(viewsets.ModelViewSet):
 
 
         leinster_style = findStyle(map(averageListValues, zip(*leinster_list)))
-        connaught_style = findStyle(map(averageListValues, zip(*leinster_list)))
-        ulster_style = findStyle(map(averageListValues, zip(*leinster_list)))
-        munster_style = findStyle(map(averageListValues, zip(*leinster_list)))
+        connaught_style = findStyle(map(averageListValues, zip(*connaught_list)))
+        ulster_style = findStyle(map(averageListValues, zip(*ulster_list)))
+        munster_style = findStyle(map(averageListValues, zip(*munster_list)))
+
 
         json_for_export = {
 

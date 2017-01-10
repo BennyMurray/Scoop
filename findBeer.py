@@ -4,8 +4,8 @@ import operator
 #Compares two beers
 def compare(list1, list2):
     difference_one = abs(float(list1[0])-float(list2[0])) #strength
-    difference_two = abs(float(list1[1])-float(list2[1])) #bitterness
-    difference_three = abs(float(list1[2])-float(list2[2])) #color
+    difference_two = abs(float(list1[1])-float(list2[2])) #bitterness
+    difference_three = abs(float(list1[2])-float(list2[1])) #color
     difference_four = abs(float(list1[3])-float(list2[3])) #acidity/funk
 
     #Eliminates inactive sliders
@@ -23,7 +23,7 @@ def compare(list1, list2):
         difference_four = 0
 
     #Applies weightings and calculates total difference
-    total_difference = (difference_one * 6) + (difference_three * 4) + (difference_four) + (difference_two * 1.8)
+    total_difference = (difference_one * 6) + (difference_three * 2.5) + (difference_four * 10) + (difference_two * 1.8)
     return total_difference
 
 
