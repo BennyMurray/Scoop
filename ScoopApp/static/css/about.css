@@ -19,7 +19,7 @@
 
 
 #wrapper_about{
-
+    position: relative;
     padding-left:28%;
     padding-right: 28%;
     text-align: center;
@@ -31,4 +31,12 @@
 p{
     margin-top: 8%;
     font-size: 0.8vw;
+}
+
+
+@media screen and (min-width: 1200px) {
+    #wrapper_about{
+    bottom: 11%;
+
+}
 }

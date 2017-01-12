@@ -742,5 +742,32 @@ body{
 
 
 
+@media screen and (min-width: 1200px) {
+    #right-side {
+    float: right;
+    width: 69%;
+	height: 100%;
+	margin-bottom: 5%;
+	position: relative;
+	left: 5%;
+
+}
+
+
+	#result_wrapper{
+
+	position: relative;
+	top: 4%;
+	display: none;
+	height: 86%;
+	width: 90%;
+	margin: 0 auto;
+	right: 1%;
+	text-align: center;
+
+
+}
+
+}
 
 
