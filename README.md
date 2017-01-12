@@ -33,9 +33,9 @@ Scoop is a craft beer search-engine that autonomously generates data through web
 
 ###Migrate the database:
 
-*Python manage.py makemigrations ScoopApp
+* Python manage.py makemigrations ScoopApp
 
-*Python manage.py migrate
+* Python manage.py migrate
 
 
 ###Load the sample database:
