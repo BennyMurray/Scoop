@@ -127,7 +127,7 @@ class VisitorAPIViewSet(viewsets.ModelViewSet):
         ulster_list = []
         connaught_list = []
 
-        # for i in range(1, CraftBeer.objects.count()+1):
+
         for visitor in Visitor.objects.all():
 
             x = model_to_dict(visitor,
@@ -135,7 +135,7 @@ class VisitorAPIViewSet(viewsets.ModelViewSet):
                               # fields to include
                               exclude=[''],  # fields to exclude
                               )
-            # print >> sys.stderr, x['beer_name']
+
 
             # list_of_lists.append(literal_eval(x['search_parameters']))
             if x['search_parameters'] != 'placeholder':
@@ -164,10 +164,6 @@ class VisitorAPIViewSet(viewsets.ModelViewSet):
             'connaught': map(averageListValues, zip(*connaught_list)),
             'styles': [leinster_style, connaught_style, ulster_style, munster_style]
                            }
-
-        # print >> '!!!!!!!', type(ip_address) is str
-        # Visitor.objects.get(ip_address='128').update(search_parameters='string')
-        # print >> sys.stderr, "USER INPUT RECORDED"
 
 
 

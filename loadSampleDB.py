@@ -2,9 +2,6 @@ import os
 import pickle
 
 
-
-
-
 #POPULATE DATABASE FUNCTION
 #--------------------------#
 def populate():

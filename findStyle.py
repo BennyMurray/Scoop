@@ -1,10 +1,5 @@
-import pickle
+
 import operator
-
-#Import web-scraped beer dictionary
-#beer_dict has following format: {STRENGTH - IMAGE_LINK - BITTERNESS - COLOUR - ACIDITY - RATEBEER_LINK_CODE}
-#dict = pickle.load(open( "beerDictionary.p", "rb" ))
-
 
 dict = {
 

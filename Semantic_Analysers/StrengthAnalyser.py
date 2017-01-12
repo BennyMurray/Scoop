@@ -1,11 +1,5 @@
 from __future__ import division
 
-
-
-
-
-
-
 def analyseStrength(word_list, published_abv):
 
    num_set = [0.19, 1.34, 1.83, 1.55, 1.38, 2.67, 1.33, 0.39, 2.55, 0.69, 1.64, 1.13, 1.29, 1.93, 2.8, 0.36, 1.54,

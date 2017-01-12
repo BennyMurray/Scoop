@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-import pickle
 from mechanize import Browser
 from bs4 import BeautifulSoup
 from IDFetcher import IDFetcher

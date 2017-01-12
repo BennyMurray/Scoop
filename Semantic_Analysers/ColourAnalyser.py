@@ -1,9 +1,6 @@
 from __future__ import division
 
 
-
-
-
 def analyseColour(word_list):
 
 
