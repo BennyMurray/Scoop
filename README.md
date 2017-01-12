@@ -45,4 +45,4 @@ Scoop is a craft beer search-engine that autonomously generates data through web
 
 ###Run the server:
 
-*Python manage.py runserver
+* Python manage.py runserver
