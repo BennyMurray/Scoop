@@ -13,15 +13,8 @@ class CraftBeer(models.Model):
     sequence_added = models.IntegerField(default=0)
 
 
-
     def __str__(self):
         return self.beer_name
-
-
-class Test(models.Model):
-    first_name = models.CharField(max_length=30, primary_key=True)
-    last_name = models.CharField(max_length=30)
-
 
 class Visitor(models.Model):
     visitor_number = models.IntegerField(primary_key=True)

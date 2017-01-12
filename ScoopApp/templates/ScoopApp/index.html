@@ -520,61 +520,69 @@
             };
 
 
-			<!-- ON KEY PRESS (Enter): sends and receives JSON from server -->
-			$(document).keypress(function(e) {
-			if(e.which == 13) {
 
 
-{#			$.getJSON("http://scoop.pythonanywhere.com/api/Craftbeers/", {#}
-            $.getJSON("/api/Craftbeers/", {
+            <!-- ON KEY PRESS (Enter): sends and receives JSON from server -->
+            $(document).keypress(function (e) {
+                if (e.which == 13) {
+
+                if (elem.value + elem2.value + elem3.value + elem4.value != 0) {
+                    {#			$.getJSON("http://scoop.pythonanywhere.com/api/Craftbeers/", {#}
+                    $.getJSON("/api/Craftbeers/", {
 
 
-				a:elem.value,
-				b:elem2.value,
-				c:elem3.value,
-				d:elem4.value,
-                e:ip_info['user_ip'],
-                f:ip_info['user_region']
+                        a: elem.value,
+                        b: elem2.value,
+                        c: elem3.value,
+                        d: elem4.value,
+                        e: ip_info['user_ip'],
+                        f: ip_info['user_region']
 
-			}, function(data){
-
-
-					document.getElementById("beer1").src=JSON.parse(JSON.stringify(data.first['image_link']));
-					document.getElementById("beer2").src=JSON.parse(JSON.stringify(data.second['image_link']));
-					document.getElementById("beer3").src=JSON.parse(JSON.stringify(data.third['image_link']));
-					document.getElementById("beer4").src=JSON.parse(JSON.stringify(data.fourth['image_link']));
-					document.getElementById("beer5").src=JSON.parse(JSON.stringify(data.fifth['image_link']));
-					document.getElementById("beer6").src=JSON.parse(JSON.stringify(data.sixth['image_link']));
+                    }, function (data) {
 
 
-                    document.getElementById("beer7").src=JSON.parse(JSON.stringify(data.seventh['image_link']));
-					document.getElementById("beer8").src=JSON.parse(JSON.stringify(data.eighth['image_link']));
-					document.getElementById("beer9").src=JSON.parse(JSON.stringify(data.ninth['image_link']));
-					document.getElementById("beer10").src=JSON.parse(JSON.stringify(data.tenth['image_link']));
-					document.getElementById("beer11").src=JSON.parse(JSON.stringify(data.eleventh['image_link']));
-					document.getElementById("beer12").src=JSON.parse(JSON.stringify(data.twelfth['image_link']));
+                        document.getElementById("beer1").src = JSON.parse(JSON.stringify(data.first['image_link']));
+                        document.getElementById("beer2").src = JSON.parse(JSON.stringify(data.second['image_link']));
+                        document.getElementById("beer3").src = JSON.parse(JSON.stringify(data.third['image_link']));
+                        document.getElementById("beer4").src = JSON.parse(JSON.stringify(data.fourth['image_link']));
+                        document.getElementById("beer5").src = JSON.parse(JSON.stringify(data.fifth['image_link']));
+                        document.getElementById("beer6").src = JSON.parse(JSON.stringify(data.sixth['image_link']));
 
 
-                    jsonHolder['beer1'] = [JSON.parse(JSON.stringify(data.first['name'])), JSON.parse(JSON.stringify(data.first['ABV'])), JSON.parse(JSON.stringify(data.first['IBU'])), JSON.parse(JSON.stringify(data.first['SRM'])), JSON.parse(JSON.stringify(data.first['acidity']))];
-                    jsonHolder['beer2'] = [JSON.parse(JSON.stringify(data.second['name'])), JSON.parse(JSON.stringify(data.second['ABV'])), JSON.parse(JSON.stringify(data.second['IBU'])), JSON.parse(JSON.stringify(data.second['SRM'])), JSON.parse(JSON.stringify(data.second['acidity']))];
-                    jsonHolder['beer3'] = [JSON.parse(JSON.stringify(data.third['name'])), JSON.parse(JSON.stringify(data.third['ABV'])), JSON.parse(JSON.stringify(data.third['IBU'])), JSON.parse(JSON.stringify(data.third['SRM'])), JSON.parse(JSON.stringify(data.third['acidity']))];
-                    jsonHolder['beer4'] = [JSON.parse(JSON.stringify(data.fourth['name'])), JSON.parse(JSON.stringify(data.fourth['ABV'])), JSON.parse(JSON.stringify(data.fourth['IBU'])), JSON.parse(JSON.stringify(data.fourth['SRM'])), JSON.parse(JSON.stringify(data.fourth['acidity']))];
-                    jsonHolder['beer5'] = [JSON.parse(JSON.stringify(data.fifth['name'])), JSON.parse(JSON.stringify(data.fifth['ABV'])), JSON.parse(JSON.stringify(data.fifth['IBU'])), JSON.parse(JSON.stringify(data.fifth['SRM'])), JSON.parse(JSON.stringify(data.fifth['acidity']))];
-                    jsonHolder['beer6'] = [JSON.parse(JSON.stringify(data.sixth['name'])), JSON.parse(JSON.stringify(data.sixth['ABV'])), JSON.parse(JSON.stringify(data.sixth['IBU'])), JSON.parse(JSON.stringify(data.sixth['SRM'])), JSON.parse(JSON.stringify(data.sixth['acidity']))];
-
-                    jsonHolder['beer7'] = [JSON.parse(JSON.stringify(data.seventh['name'])), JSON.parse(JSON.stringify(data.seventh['ABV'])), JSON.parse(JSON.stringify(data.seventh['IBU'])), JSON.parse(JSON.stringify(data.seventh['SRM'])), JSON.parse(JSON.stringify(data.seventh['acidity']))];
-                    jsonHolder['beer8'] = [JSON.parse(JSON.stringify(data.eighth['name'])), JSON.parse(JSON.stringify(data.eighth['ABV'])), JSON.parse(JSON.stringify(data.eighth['IBU'])), JSON.parse(JSON.stringify(data.eighth['SRM'])), JSON.parse(JSON.stringify(data.eighth['acidity']))];
-                    jsonHolder['beer9'] = [JSON.parse(JSON.stringify(data.ninth['name'])), JSON.parse(JSON.stringify(data.ninth['ABV'])), JSON.parse(JSON.stringify(data.ninth['IBU'])), JSON.parse(JSON.stringify(data.ninth['SRM'])), JSON.parse(JSON.stringify(data.ninth['acidity']))];
-                    jsonHolder['beer10'] = [JSON.parse(JSON.stringify(data.tenth['name'])), JSON.parse(JSON.stringify(data.tenth['ABV'])), JSON.parse(JSON.stringify(data.tenth['IBU'])), JSON.parse(JSON.stringify(data.tenth['SRM'])), JSON.parse(JSON.stringify(data.tenth['acidity']))];
-                    jsonHolder['beer11'] = [JSON.parse(JSON.stringify(data.eleventh['name'])), JSON.parse(JSON.stringify(data.eleventh['ABV'])), JSON.parse(JSON.stringify(data.eleventh['IBU'])), JSON.parse(JSON.stringify(data.eleventh['SRM'])), JSON.parse(JSON.stringify(data.eleventh['acidity']))];
-                    jsonHolder['beer12'] = [JSON.parse(JSON.stringify(data.twelfth['name'])), JSON.parse(JSON.stringify(data.twelfth['ABV'])), JSON.parse(JSON.stringify(data.twelfth['IBU'])), JSON.parse(JSON.stringify(data.twelfth['SRM'])), JSON.parse(JSON.stringify(data.twelfth['acidity']))];
+                        document.getElementById("beer7").src = JSON.parse(JSON.stringify(data.seventh['image_link']));
+                        document.getElementById("beer8").src = JSON.parse(JSON.stringify(data.eighth['image_link']));
+                        document.getElementById("beer9").src = JSON.parse(JSON.stringify(data.ninth['image_link']));
+                        document.getElementById("beer10").src = JSON.parse(JSON.stringify(data.tenth['image_link']));
+                        document.getElementById("beer11").src = JSON.parse(JSON.stringify(data.eleventh['image_link']));
+                        document.getElementById("beer12").src = JSON.parse(JSON.stringify(data.twelfth['image_link']));
 
 
-					searchResults();
+                        jsonHolder['beer1'] = [JSON.parse(JSON.stringify(data.first['name'])), JSON.parse(JSON.stringify(data.first['ABV'])), JSON.parse(JSON.stringify(data.first['IBU'])), JSON.parse(JSON.stringify(data.first['SRM'])), JSON.parse(JSON.stringify(data.first['acidity']))];
+                        jsonHolder['beer2'] = [JSON.parse(JSON.stringify(data.second['name'])), JSON.parse(JSON.stringify(data.second['ABV'])), JSON.parse(JSON.stringify(data.second['IBU'])), JSON.parse(JSON.stringify(data.second['SRM'])), JSON.parse(JSON.stringify(data.second['acidity']))];
+                        jsonHolder['beer3'] = [JSON.parse(JSON.stringify(data.third['name'])), JSON.parse(JSON.stringify(data.third['ABV'])), JSON.parse(JSON.stringify(data.third['IBU'])), JSON.parse(JSON.stringify(data.third['SRM'])), JSON.parse(JSON.stringify(data.third['acidity']))];
+                        jsonHolder['beer4'] = [JSON.parse(JSON.stringify(data.fourth['name'])), JSON.parse(JSON.stringify(data.fourth['ABV'])), JSON.parse(JSON.stringify(data.fourth['IBU'])), JSON.parse(JSON.stringify(data.fourth['SRM'])), JSON.parse(JSON.stringify(data.fourth['acidity']))];
+                        jsonHolder['beer5'] = [JSON.parse(JSON.stringify(data.fifth['name'])), JSON.parse(JSON.stringify(data.fifth['ABV'])), JSON.parse(JSON.stringify(data.fifth['IBU'])), JSON.parse(JSON.stringify(data.fifth['SRM'])), JSON.parse(JSON.stringify(data.fifth['acidity']))];
+                        jsonHolder['beer6'] = [JSON.parse(JSON.stringify(data.sixth['name'])), JSON.parse(JSON.stringify(data.sixth['ABV'])), JSON.parse(JSON.stringify(data.sixth['IBU'])), JSON.parse(JSON.stringify(data.sixth['SRM'])), JSON.parse(JSON.stringify(data.sixth['acidity']))];
 
-			});
-			}
-		});
+                        jsonHolder['beer7'] = [JSON.parse(JSON.stringify(data.seventh['name'])), JSON.parse(JSON.stringify(data.seventh['ABV'])), JSON.parse(JSON.stringify(data.seventh['IBU'])), JSON.parse(JSON.stringify(data.seventh['SRM'])), JSON.parse(JSON.stringify(data.seventh['acidity']))];
+                        jsonHolder['beer8'] = [JSON.parse(JSON.stringify(data.eighth['name'])), JSON.parse(JSON.stringify(data.eighth['ABV'])), JSON.parse(JSON.stringify(data.eighth['IBU'])), JSON.parse(JSON.stringify(data.eighth['SRM'])), JSON.parse(JSON.stringify(data.eighth['acidity']))];
+                        jsonHolder['beer9'] = [JSON.parse(JSON.stringify(data.ninth['name'])), JSON.parse(JSON.stringify(data.ninth['ABV'])), JSON.parse(JSON.stringify(data.ninth['IBU'])), JSON.parse(JSON.stringify(data.ninth['SRM'])), JSON.parse(JSON.stringify(data.ninth['acidity']))];
+                        jsonHolder['beer10'] = [JSON.parse(JSON.stringify(data.tenth['name'])), JSON.parse(JSON.stringify(data.tenth['ABV'])), JSON.parse(JSON.stringify(data.tenth['IBU'])), JSON.parse(JSON.stringify(data.tenth['SRM'])), JSON.parse(JSON.stringify(data.tenth['acidity']))];
+                        jsonHolder['beer11'] = [JSON.parse(JSON.stringify(data.eleventh['name'])), JSON.parse(JSON.stringify(data.eleventh['ABV'])), JSON.parse(JSON.stringify(data.eleventh['IBU'])), JSON.parse(JSON.stringify(data.eleventh['SRM'])), JSON.parse(JSON.stringify(data.eleventh['acidity']))];
+                        jsonHolder['beer12'] = [JSON.parse(JSON.stringify(data.twelfth['name'])), JSON.parse(JSON.stringify(data.twelfth['ABV'])), JSON.parse(JSON.stringify(data.twelfth['IBU'])), JSON.parse(JSON.stringify(data.twelfth['SRM'])), JSON.parse(JSON.stringify(data.twelfth['acidity']))];
+
+
+                        searchResults();
+
+                    });
+                }
+
+                   }else{
+            alert("Please enter search values")
+        }
+            });
+
+
 
 
 		</script>

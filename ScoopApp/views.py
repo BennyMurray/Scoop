@@ -31,6 +31,7 @@ def aboutView(request):
     return render(request, 'ScoopApp/about.html', {})
 
 
+
 #MAP PAGE VIEW
 #-------------#
 def mapView(request):
@@ -66,7 +67,7 @@ class CraftBeerAPIViewSet(viewsets.ModelViewSet):
             #populate empty_dictionary with converted beer objects
             new_dict[converted_object['beer_name']] = [converted_object['ABV'], converted_object['IBU'], converted_object['SRM'], converted_object['acidity'], converted_object['image_link']]
 
-        #pickle.dump(new_dict, open("printme.p", "wb"))
+
 
 
         # Receive Data from client
