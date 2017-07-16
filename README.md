@@ -6,6 +6,7 @@
 Scoop is a craft beer search-engine that autonomously generates data through web-scraping and semantic analysis.
 
 ## Demo
+![scoop gif](https://user-images.githubusercontent.com/17185335/28251473-97c6147e-6a75-11e7-9a70-400d98f5c445.gif)
 
 # To build project:
 
